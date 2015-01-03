@@ -41,10 +41,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ModernUI", "ModernUI", "{53353FED-F61C-4C25-94DA-76A631C1C875}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ModernUICharts", "ModernUICharts", "{08A24D92-3BC9-4744-BB65-CDE46F9921DB}"
-	ProjectSection(SolutionItems) = preProject
-		De.TorstenMandelkow.MetroChart.WPF\De.TorstenMandelkow.MetroChart.WPF.csproj = De.TorstenMandelkow.MetroChart.WPF\De.TorstenMandelkow.MetroChart.WPF.csproj
-		TestApplicationWPF\TestApplicationWPF.csproj = TestApplicationWPF\TestApplicationWPF.csproj
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{8E948EF0-B95C-4523-B644-4D3D92EF76A1}"
 EndProject
@@ -55,6 +51,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Windows", "Windows", "{B63CE79E-F99F-47FA-9E72-31B33CABB34F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Windows", "Windows\Windows.csproj", "{AB74E88C-C95C-44FE-B9A0-3F02BFB79883}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "De.TorstenMandelkow.MetroChart", "De.TorstenMandelkow.MetroChart\De.TorstenMandelkow.MetroChart.csproj", "{FA286411-E476-4BD0-ABE9-7AE69226069C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestCharts", "TestCharts\TestCharts.csproj", "{7EBC3766-C554-40BD-9524-D35309084FF0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -82,6 +82,14 @@ Global
 		{AB74E88C-C95C-44FE-B9A0-3F02BFB79883}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AB74E88C-C95C-44FE-B9A0-3F02BFB79883}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AB74E88C-C95C-44FE-B9A0-3F02BFB79883}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA286411-E476-4BD0-ABE9-7AE69226069C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA286411-E476-4BD0-ABE9-7AE69226069C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA286411-E476-4BD0-ABE9-7AE69226069C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA286411-E476-4BD0-ABE9-7AE69226069C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EBC3766-C554-40BD-9524-D35309084FF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EBC3766-C554-40BD-9524-D35309084FF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EBC3766-C554-40BD-9524-D35309084FF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EBC3766-C554-40BD-9524-D35309084FF0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -97,6 +105,8 @@ Global
 		{9A653A28-FE46-40E8-A14F-48B0E325165D} = {53353FED-F61C-4C25-94DA-76A631C1C875}
 		{BA5911EB-F34B-4F8D-AB29-6B967ED0B8DC} = {53353FED-F61C-4C25-94DA-76A631C1C875}
 		{A0EA4572-2726-4585-8E17-3A81A0EAFA61} = {53353FED-F61C-4C25-94DA-76A631C1C875}
+		{FA286411-E476-4BD0-ABE9-7AE69226069C} = {08A24D92-3BC9-4744-BB65-CDE46F9921DB}
+		{7EBC3766-C554-40BD-9524-D35309084FF0} = {08A24D92-3BC9-4744-BB65-CDE46F9921DB}
 		{055E7221-3A1C-4DE2-A1C8-E8BB0B4803E9} = {8E948EF0-B95C-4523-B644-4D3D92EF76A1}
 		{AB74E88C-C95C-44FE-B9A0-3F02BFB79883} = {B63CE79E-F99F-47FA-9E72-31B33CABB34F}
 	EndGlobalSection
