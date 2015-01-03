@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstFloor.ModernUI", "FirstFloor.ModernUI\FirstFloor.ModernUI.csproj", "{9A653A28-FE46-40E8-A14F-48B0E325165D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Binaries", "Binaries", "{E3D8DFD4-4299-4FE0-9BE8-0CB41F189489}"
@@ -34,22 +36,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Binaries", "Binaries", "{14
 		Build\Binaries\signvsix.exe = Build\Binaries\signvsix.exe
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{E603852F-BDCF-413F-A645-4FD84911351B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ModernUI", "ModernUI", "{53353FED-F61C-4C25-94DA-76A631C1C875}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ModernUICharts", "ModernUICharts", "{08A24D92-3BC9-4744-BB65-CDE46F9921DB}"
+	ProjectSection(SolutionItems) = preProject
+		De.TorstenMandelkow.MetroChart.WPF\De.TorstenMandelkow.MetroChart.WPF.csproj = De.TorstenMandelkow.MetroChart.WPF\De.TorstenMandelkow.MetroChart.WPF.csproj
+		TestApplicationWPF\TestApplicationWPF.csproj = TestApplicationWPF\TestApplicationWPF.csproj
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{8E948EF0-B95C-4523-B644-4D3D92EF76A1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{AE09E210-DA89-4D43-B909-28C8925D9697}"
+EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 4
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs02
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = FirstFloor.ModernUI.App\\FirstFloor.ModernUI.App.csproj
-		SccProjectName1 = FirstFloor.ModernUI.App
-		SccLocalPath1 = FirstFloor.ModernUI.App
-		SccProjectUniqueName2 = FirstFloor.ModernUI\\FirstFloor.ModernUI.csproj
-		SccProjectName2 = FirstFloor.ModernUI
-		SccLocalPath2 = FirstFloor.ModernUI
-		SccProjectUniqueName3 = FirstFloor.ModernUI.WPF4\\FirstFloor.ModernUI.WPF4.csproj
-		SccProjectName3 = FirstFloor.ModernUI.WPF4
-		SccLocalPath3 = FirstFloor.ModernUI.WPF4
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -73,5 +74,13 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{14C3EC42-FD0C-4966-A684-AF2B1808A10A} = {B74B36EF-E37C-4A70-A9C8-C0715D593B67}
+		{53353FED-F61C-4C25-94DA-76A631C1C875} = {E603852F-BDCF-413F-A645-4FD84911351B}
+		{08A24D92-3BC9-4744-BB65-CDE46F9921DB} = {E603852F-BDCF-413F-A645-4FD84911351B}
+		{E3D8DFD4-4299-4FE0-9BE8-0CB41F189489} = {53353FED-F61C-4C25-94DA-76A631C1C875}
+		{B74B36EF-E37C-4A70-A9C8-C0715D593B67} = {53353FED-F61C-4C25-94DA-76A631C1C875}
+		{2AC3CC94-8119-4CDC-A01C-02455F8E8AF5} = {53353FED-F61C-4C25-94DA-76A631C1C875}
+		{9A653A28-FE46-40E8-A14F-48B0E325165D} = {53353FED-F61C-4C25-94DA-76A631C1C875}
+		{BA5911EB-F34B-4F8D-AB29-6B967ED0B8DC} = {53353FED-F61C-4C25-94DA-76A631C1C875}
+		{A0EA4572-2726-4585-8E17-3A81A0EAFA61} = {53353FED-F61C-4C25-94DA-76A631C1C875}
 	EndGlobalSection
 EndGlobal
