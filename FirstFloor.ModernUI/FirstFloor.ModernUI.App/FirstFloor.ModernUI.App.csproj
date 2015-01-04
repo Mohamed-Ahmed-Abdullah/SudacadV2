@@ -41,6 +41,13 @@
     <StartupObject>FirstFloor.ModernUI.App.App</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Windows.Shell">
       <HintPath>..\Binaries\Microsoft.Windows.Shell.dll</HintPath>
     </Reference>
@@ -69,8 +76,16 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="BingImage.cs" />
+    <Compile Include="Common\Lookup.cs" />
+    <Compile Include="Common\LookupComboBox.cs" />
+    <Compile Include="Infrastructure\DelegateCommands.cs" />
+    <Compile Include="Infrastructure\UserControlBase.cs" />
+    <Compile Include="Infrastructure\ViewModelBase.cs" />
     <Compile Include="Pages\Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TraineeView.xaml.cs">
+      <DependentUpon>TraineeView.xaml</DependentUpon>
     </Compile>
     <Compile Include="SampleFormViewModel.cs" />
     <Compile Include="FlickrImageLoader.cs" />
@@ -114,6 +129,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+      <Project>{055e7221-3a1c-4de2-a1c8-e8bb0b4803e9}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FirstFloor.ModernUI\FirstFloor.ModernUI.csproj">
       <Project>{9a653a28-fe46-40e8-a14f-48b0e325165d}</Project>
       <Name>FirstFloor.ModernUI</Name>
@@ -207,6 +226,10 @@
     <Page Include="Pages\Settings.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\TraineeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>

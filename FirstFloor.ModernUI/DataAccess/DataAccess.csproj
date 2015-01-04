@@ -48,11 +48,12 @@
   <ItemGroup>
     <Compile Include="DataContext\DataContext.cs" />
     <Compile Include="DataContext\DbInitializer.cs" />
+    <Compile Include="DbEntities\Trainee.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Common\" />
-    <Folder Include="DbEntities\" />
+    <Folder Include="DbEntities\Lookups\" />
     <Folder Include="Entities\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

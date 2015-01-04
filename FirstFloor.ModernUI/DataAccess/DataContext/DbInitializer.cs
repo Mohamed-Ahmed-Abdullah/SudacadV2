@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.DataContext
 {
-    public class DbInitializer : DropCreateDatabaseIfModelChanges<DataContext>
+    public class DbInitializer : DropCreateDatabaseIfModelChanges<DatabaseContext>
     {
     }
 }
