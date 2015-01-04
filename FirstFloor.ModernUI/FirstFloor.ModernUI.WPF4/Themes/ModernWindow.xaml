@@ -51,7 +51,7 @@
                                     <ContentControl Grid.RowSpan="5" Content="{TemplateBinding BackgroundContent}" />
 
                                     <!-- title bar -->
-                                    <Grid>
+                                    <Grid  FlowDirection="RightToLeft">
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="*" />
                                             <ColumnDefinition Width="Auto" />
@@ -137,7 +137,7 @@
                                         </StackPanel>
                                     </Grid>
 
-                                    <Grid Grid.Row="1">
+                                    <Grid Grid.Row="1"  FlowDirection="RightToLeft">
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="42" />
                                             <ColumnDefinition Width="*"/>

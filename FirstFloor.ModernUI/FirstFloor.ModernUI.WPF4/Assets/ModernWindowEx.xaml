@@ -46,7 +46,7 @@
                                     <ContentPresenter Grid.Row="1" Margin="{TemplateBinding Padding}" />
 
                                     <!-- title bar -->
-                                    <Grid>
+                                    <Grid  FlowDirection="RightToLeft">
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="*" />
                                             <ColumnDefinition Width="Auto" />
