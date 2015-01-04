@@ -77,7 +77,8 @@
     </Compile>
     <Compile Include="BingImage.cs" />
     <Compile Include="Common\Lookup.cs" />
-    <Compile Include="Common\LookupComboBox.cs" />
+    <Compile Include="Common\LookupService.cs" />
+    <Compile Include="Infrastructure\AttachedProperties\LookupType.cs" />
     <Compile Include="Infrastructure\DelegateCommands.cs" />
     <Compile Include="Infrastructure\UserControlBase.cs" />
     <Compile Include="Infrastructure\ViewModelBase.cs" />

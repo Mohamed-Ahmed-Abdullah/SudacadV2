@@ -4,18 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FirstFloor.ModernUI.App.Common
+namespace DataAccess.DbEntities.Base
 {
-    public class Lookup
+    public class Names : JustId
     {
-        public int Id { get; set; }
         public string ArabicName { get; set; }
         public string EnglishName { get; set; }
-    }
-
-    public enum LookupTypes
-    {
-        None,
-        Jobs
     }
 }

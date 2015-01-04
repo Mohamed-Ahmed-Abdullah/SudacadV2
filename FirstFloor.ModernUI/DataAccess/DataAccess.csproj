@@ -48,6 +48,10 @@
   <ItemGroup>
     <Compile Include="DataContext\DataContext.cs" />
     <Compile Include="DataContext\DbInitializer.cs" />
+    <Compile Include="DataContext\PublicDatabaseContext.cs" />
+    <Compile Include="DbEntities\Base\JustId.cs" />
+    <Compile Include="DbEntities\Base\Names.cs" />
+    <Compile Include="DbEntities\Job.cs" />
     <Compile Include="DbEntities\Trainee.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

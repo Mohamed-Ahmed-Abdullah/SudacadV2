@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,12 +35,6 @@ namespace FirstFloor.ModernUI.App.Pages
             var viewModel = ((TraineeViewModel) DataContext);
             viewModel.Entity = new Trainee();
             viewModel.DatabaseContext.Trainees.Add(viewModel.Entity);
-        }
-
-        private void Save_OnClick(object sender, RoutedEventArgs e)
-        {
-            //TODO: this should be command 
-            ((TraineeViewModel) DataContext).DatabaseContext.SaveChanges();
         }
     }
 

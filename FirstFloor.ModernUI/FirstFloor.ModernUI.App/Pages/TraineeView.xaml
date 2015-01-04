@@ -4,6 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:infrastructure="clr-namespace:FirstFloor.ModernUI.App.Infrastructure"
+             xmlns:common="clr-namespace:FirstFloor.ModernUI.App.Common"
+             xmlns:attachedProperties="clr-namespace:FirstFloor.ModernUI.App.Infrastructure.AttachedProperties"
              mc:Ignorable="d" 
              d:DesignHeight="329.324" d:DesignWidth="603.384">
     <Grid>
@@ -61,14 +63,18 @@
 
         <TextBlock Grid.Column="0" Grid.Row="4" Text="البريد الالكتروني"></TextBlock>
         <TextBox Grid.Column="0" Grid.Row="5"  TabIndex="6"
-                 Text="{Binding Entity.XXXXXXXXX,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"></TextBox>
+                 Text="{Binding Entity.EmailAddress,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"></TextBox>
         
         <TextBlock Grid.Column="1" Grid.Row="4" Text="رقم الهاتف"></TextBlock>
         <TextBox Grid.Column="1" Grid.Row="5"  TabIndex="7"
-                 Text="{Binding Entity.XXXXXXXXX,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"></TextBox>
+                 Text="{Binding Entity.PhoneNumber,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"></TextBox>
 
         <TextBlock Grid.Column="0" Grid.Row="6" Text="الوظيفة"></TextBlock>
-        <ComboBox Grid.Column="0" Grid.Row="7"></ComboBox>
+        <!-- TODO: when the user start typing the poppup should be open so he can select -->
+        <ComboBox attachedProperties:LookupTypeAttached.LookupType="{x:Static common:LookupTypes.Jobs}" 
+                  IsEditable="True" SelectionChanged="Selector_OnSelectionChanged"
+                  SelectedItem="{Binding Entity.Job,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
+                  Grid.Column="0" Grid.Row="7" ></ComboBox>
         
     </Grid>
 </infrastructure:UserControlBase>

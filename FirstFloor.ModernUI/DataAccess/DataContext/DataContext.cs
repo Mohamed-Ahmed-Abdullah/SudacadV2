@@ -17,5 +17,6 @@ namespace DataAccess.DataContext
         }
 
         public DbSet<Trainee> Trainees { get; set; }
+        public DbSet<Job> Jobs { get; set; }
     }
 }
