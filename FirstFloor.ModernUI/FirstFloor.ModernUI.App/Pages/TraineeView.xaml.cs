@@ -33,7 +33,12 @@ namespace FirstFloor.ModernUI.App.Pages
         void TraineeView_Loaded(object sender, RoutedEventArgs e)
         {
             var viewModel = ((TraineeViewModel) DataContext);
-            viewModel.Entity = new Trainee();
+            viewModel.Entity = new Trainee
+            {
+                Identity = new Identity(),
+                Sudatel = new TraineeSudatel(),
+                TraineeOrganizations = new TraineeOrganizations()
+            };
             viewModel.DatabaseContext.Trainees.Add(viewModel.Entity);
         }
     }
@@ -51,10 +56,16 @@ namespace FirstFloor.ModernUI.App.Pages
 
         public ICommand Save { get; set; }
         public ICommand Load { get; set; }
+        public ICommand Delete { get; set; }
 
         public TraineeViewModel()
         {
             Save = new DelegateCommand(() => DatabaseContext.SaveChanges());
+            Delete = new DelegateCommand(() =>
+            {
+                //TODO: delete checks
+                //TODO: delete it or conferm the error
+            });
         }
 
     }

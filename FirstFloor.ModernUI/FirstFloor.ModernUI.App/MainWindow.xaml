@@ -2,8 +2,9 @@
                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                   xmlns:mui="http://firstfloorsoftware.com/ModernUI"
-                  Title="" IsTitleVisible="False"
-                  ContentSource="/Pages/Introduction.xaml"
+                  Title="" IsTitleVisible="False" 
+                  WindowState="Maximized"
+                  ContentSource="/Pages/TraineeView.xaml"
                   Width="800" Height="700">
     
     <mui:ModernWindow.TitleLinks>

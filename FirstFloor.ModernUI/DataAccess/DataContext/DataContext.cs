@@ -18,5 +18,13 @@ namespace DataAccess.DataContext
 
         public DbSet<Trainee> Trainees { get; set; }
         public DbSet<Job> Jobs { get; set; }
+        public DbSet<Identity> Identities { get; set; }
+        public DbSet<IdentityType> IdentityTypes { get; set; }
+        public DbSet<Nationality> Nationalities { get; set; }
+        public DbSet<Division> Divisions { get; set; }
+        public DbSet<TraineeSudatel> TraineesSudatel { get; set; }
+        public DbSet<TraineeOrganizations> TraineesOrganizations { get; set; }
+        public DbSet<OrganizationType> OrganizationTypes { get; set; }
+        public DbSet<Organization> Organizations { get; set; }
     }
 }

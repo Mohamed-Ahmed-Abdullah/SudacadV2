@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace DataAccess.DbEntities.Base
 {
-    public class Names : JustId
+    public class Lookup : JustId
     {
         public string ArabicName { get; set; }
         public string EnglishName { get; set; }
+        public string Notes { get; set; }
     }
 }

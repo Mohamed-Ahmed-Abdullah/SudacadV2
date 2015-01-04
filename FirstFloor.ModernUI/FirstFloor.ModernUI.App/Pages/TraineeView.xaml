@@ -6,11 +6,22 @@
              xmlns:infrastructure="clr-namespace:FirstFloor.ModernUI.App.Infrastructure"
              xmlns:common="clr-namespace:FirstFloor.ModernUI.App.Common"
              xmlns:attachedProperties="clr-namespace:FirstFloor.ModernUI.App.Infrastructure.AttachedProperties"
+             xmlns:pages="clr-namespace:FirstFloor.ModernUI.App.Pages"
+             xmlns:textBoxWaterMark="clr-namespace:FirstFloor.ModernUI.App.Common.Controls.TextBoxWaterMark"
+             xmlns:titleTextBlock="clr-namespace:FirstFloor.ModernUI.App.Common.Controls.TitleTextBlock"
              mc:Ignorable="d" 
-             d:DesignHeight="329.324" d:DesignWidth="603.384">
+             d:DesignHeight="399.324" d:DesignWidth="603.384"
+                                d:DataContext="{d:DesignInstance pages:TraineeViewModel}">
+    <infrastructure:UserControlBase.Resources>
+        <Style BasedOn="{StaticResource {x:Type TextBlock}}"
+               TargetType="{x:Type TextBlock}">
+            <Setter Property="Margin" Value="2,5,2,2"></Setter>
+        </Style>
+    </infrastructure:UserControlBase.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -22,11 +33,18 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Text="اسم المتدرب"></TextBlock>
-        <Grid Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2">
+        <titleTextBlock:TitleTextBlock Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3"  Text="معلومات اولية"/>
+        
+        <TextBlock Grid.Column="0" Grid.Row="1" Text="اسم المتدرب"  ></TextBlock>
+        <Grid Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
@@ -42,9 +60,9 @@
             <TextBox Grid.Column="3" TabIndex="3"
                      Text="{Binding Entity.ArabicLastName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"></TextBox>
         </Grid>
-        
-        <TextBlock Grid.Column="0" Grid.Row="2" Text="اسم المتدرب بالانجليزية"></TextBlock>
-        <Grid Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2">
+
+        <TextBlock Grid.Column="2" Grid.Row="1" Text="اسم المتدرب بالانجليزية" ></TextBlock>
+        <Grid Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
@@ -61,20 +79,146 @@
                      Text="{Binding Entity.EnglishLastName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"></TextBox>
         </Grid>
 
-        <TextBlock Grid.Column="0" Grid.Row="4" Text="البريد الالكتروني"></TextBlock>
-        <TextBox Grid.Column="0" Grid.Row="5"  TabIndex="6"
+        <TextBlock Grid.Column="0" Grid.Row="4" Text="البريد الالكتروني" Grid.RowSpan="2"></TextBlock>
+        <TextBox Grid.Column="0" Grid.Row="6"  TabIndex="8"
                  Text="{Binding Entity.EmailAddress,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"></TextBox>
-        
-        <TextBlock Grid.Column="1" Grid.Row="4" Text="رقم الهاتف"></TextBlock>
-        <TextBox Grid.Column="1" Grid.Row="5"  TabIndex="7"
+
+        <TextBlock Grid.Column="2" Grid.Row="4" Text="رقم الهاتف" Grid.RowSpan="2"></TextBlock>
+        <TextBox Grid.Column="2" Grid.Row="6"  TabIndex="9"
                  Text="{Binding Entity.PhoneNumber,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"></TextBox>
 
-        <TextBlock Grid.Column="0" Grid.Row="6" Text="الوظيفة"></TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="7" Text="الوظيفة"></TextBlock>
         <!-- TODO: when the user start typing the poppup should be open so he can select -->
         <ComboBox attachedProperties:LookupTypeAttached.LookupType="{x:Static common:LookupTypes.Jobs}" 
-                  IsEditable="True" SelectionChanged="Selector_OnSelectionChanged"
+                  IsEditable="True" TabIndex="10"
                   SelectedItem="{Binding Entity.Job,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
-                  Grid.Column="0" Grid.Row="7" ></ComboBox>
+                  Grid.Column="0" Grid.Row="8" ></ComboBox>
+
+        <TextBlock Grid.Column="2" Grid.Row="7" Text="الهوية"></TextBlock>
+        <Grid Grid.Column="2" Grid.Row="8" Grid.ColumnSpan="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+            <ComboBox attachedProperties:LookupTypeAttached.LookupType="{x:Static common:LookupTypes.Nationalities}" 
+                  IsEditable="True" TabIndex="10"
+                      SelectedIndex="0"
+                  SelectedItem="{Binding Entity.Identity.Nationality,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
+                  Grid.Column="0" ></ComboBox>
+            
+            <ComboBox attachedProperties:LookupTypeAttached.LookupType="{x:Static common:LookupTypes.IdentityType}" 
+                      SelectedIndex="0"
+                  IsEditable="True" TabIndex="11"
+                  SelectedItem="{Binding Entity.Identity.IdentityType,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
+                  Grid.Column="1" ></ComboBox>
+
+            <TextBox Grid.Column="2" TabIndex="12"
+                     Text="{Binding Entity.Identity.IdentityNumber,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"></TextBox>
+
+            <DatePicker SelectedDate="{Binding Entity.Identity.IssueDate,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
+                        FlowDirection="LeftToRight"
+                        Grid.Column="3" TabIndex="13"></DatePicker>
+        </Grid>
+
+        <TextBlock Grid.Column="0" Grid.Row="9" Text="ملاحظات"></TextBlock>
+        <TextBox Grid.Column="0" Grid.Row="10" Grid.ColumnSpan="3" MinHeight="44" 
+                 Text="{Binding Entity.Notes,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"></TextBox>
         
+        <StackPanel  Grid.Column="0" Grid.Row="11" Grid.ColumnSpan="3" Margin="0,10,0,0"
+                     Orientation="Horizontal" >
+            
+            <RadioButton x:Name="Alone" Margin="0,0,20,0"
+                         GroupName="TraineeType" IsChecked="True"
+                         Foreground="{DynamicResource Accent}"
+                         Content="فرد"/>
+
+            <RadioButton x:Name="Sudatel" Margin="0,0,20,0"
+                         GroupName="TraineeType"
+                         Foreground="{DynamicResource Accent}"
+                         Content="من سوداتل"/>
+
+            <RadioButton x:Name="AnotherCompany" Margin="0,0,20,0"
+                         GroupName="TraineeType"
+                         Foreground="{DynamicResource Accent}"
+                         Content="من شركة اخرى"/>
+        </StackPanel>
+        
+        <Grid x:Name="FromSudatel"
+              Grid.Column="0" Grid.Row="12" Grid.ColumnSpan="3"
+              Visibility="{Binding ElementName=Sudatel,Path=IsChecked,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource BooleanToVisibilityConverter}}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Column="0" Grid.Row="0" Text="القطاع"  ></TextBlock>
+            <ComboBox Grid.Column="0" Grid.Row="1" 
+                      attachedProperties:LookupTypeAttached.LookupType="{x:Static common:LookupTypes.Division}" 
+                      SelectedItem="{Binding Entity.Sudatel.Division,UpdateSourceTrigger=PropertyChanged}"></ComboBox>
+            
+            <TextBlock Grid.Column="2" Grid.Row="0" Text="القسم"  ></TextBlock>
+            <TextBox  Grid.Column="2" Grid.Row="1"
+                      Text="{Binding Entity.Sudatel.Department,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"></TextBox>
+            
+            <TextBlock Grid.Column="4" Grid.Row="0" Text="رقم الملف"  ></TextBlock>
+            <TextBox Grid.Column="4" Grid.Row="1"
+                     Text="{Binding Entity.Sudatel.SudatelEmployeeId,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"></TextBox>
+
+        </Grid>
+        
+        <Grid x:Name="FromAnothercompany" 
+              Grid.Column="0" Grid.Row="12" Grid.ColumnSpan="3"
+              Visibility="{Binding ElementName=AnotherCompany,Path=IsChecked,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource BooleanToVisibilityConverter}}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Column="0" Grid.Row="0" Text="نوع المؤوسسة"  ></TextBlock>
+            <ComboBox Grid.Column="0" Grid.Row="1" 
+                      attachedProperties:LookupTypeAttached.LookupType="{x:Static common:LookupTypes.OrganizationType}" 
+                      ></ComboBox>
+            
+            <TextBlock Grid.Column="2" Grid.Row="0" Text="اسم المؤوسسة"  ></TextBlock>
+            <ComboBox Grid.Column="2" Grid.Row="1" 
+                      attachedProperties:LookupTypeAttached.LookupType="{x:Static common:LookupTypes.Organization}" 
+                      ></ComboBox>
+            
+            <TextBlock Grid.Column="0" Grid.Row="2" Text="المندوب"  ></TextBlock>
+            <TextBox Grid.Column="0" Grid.Row="3" 
+                     Text="{Binding Entity.TraineeOrganizations.CoordinatorName,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"></TextBox>
+            
+            <TextBlock Grid.Column="2" Grid.Row="2" Text="البريد الالكتروني"  ></TextBlock>
+            <TextBox Grid.Column="2" Grid.Row="3" 
+                     Text="{Binding Entity.TraineeOrganizations.Email,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"></TextBox>
+        </Grid>
+
+        <StackPanel Grid.Column="0" Grid.Row="13" Grid.ColumnSpan="3"
+                    Margin="0,10,0,0" Orientation="Horizontal">
+            <Button Content="حفظ" Width="80" Background="{DynamicResource Accent}"
+                    Margin="5,0" Command="{Binding Save}"></Button>
+            <!--<Button Content="حذف" Command="{Binding Delete}" Width="80" Margin="5,0" ></Button>-->
+        </StackPanel>
     </Grid>
 </infrastructure:UserControlBase>

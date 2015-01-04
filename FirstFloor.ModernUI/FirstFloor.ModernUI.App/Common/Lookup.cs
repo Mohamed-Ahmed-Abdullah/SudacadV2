@@ -12,10 +12,4 @@ namespace FirstFloor.ModernUI.App.Common
         public string ArabicName { get; set; }
         public string EnglishName { get; set; }
     }
-
-    public enum LookupTypes
-    {
-        None,
-        Jobs
-    }
 }

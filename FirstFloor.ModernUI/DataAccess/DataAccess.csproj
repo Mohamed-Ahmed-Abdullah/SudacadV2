@@ -51,8 +51,16 @@
     <Compile Include="DataContext\PublicDatabaseContext.cs" />
     <Compile Include="DbEntities\Base\JustId.cs" />
     <Compile Include="DbEntities\Base\Names.cs" />
+    <Compile Include="DbEntities\Division.cs" />
+    <Compile Include="DbEntities\Identity.cs" />
+    <Compile Include="DbEntities\IdentityType.cs" />
     <Compile Include="DbEntities\Job.cs" />
+    <Compile Include="DbEntities\Nationality.cs" />
+    <Compile Include="DbEntities\Organization.cs" />
+    <Compile Include="DbEntities\OrganizationType.cs" />
     <Compile Include="DbEntities\Trainee.cs" />
+    <Compile Include="DbEntities\TraineeOrganizations.cs" />
+    <Compile Include="DbEntities\TraineeSudatel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
