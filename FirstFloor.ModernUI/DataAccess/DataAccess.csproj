@@ -61,6 +61,7 @@
     <Compile Include="DbEntities\Trainee.cs" />
     <Compile Include="DbEntities\TraineeOrganizations.cs" />
     <Compile Include="DbEntities\TraineeSudatel.cs" />
+    <Compile Include="DbEntities\TraineeType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

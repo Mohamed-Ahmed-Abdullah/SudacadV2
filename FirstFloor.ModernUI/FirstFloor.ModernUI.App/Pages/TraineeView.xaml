@@ -131,23 +131,26 @@
                      Orientation="Horizontal" >
             
             <RadioButton x:Name="Alone" Margin="0,0,20,0"
-                         GroupName="TraineeType" IsChecked="True"
+                         GroupName="TraineeType" 
+                         IsChecked="{Binding Alone,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" 
                          Foreground="{DynamicResource Accent}"
                          Content="فرد"/>
-
+            
             <RadioButton x:Name="Sudatel" Margin="0,0,20,0"
-                         GroupName="TraineeType"
+                         GroupName="TraineeType" 
+                         IsChecked="{Binding WithSudatel,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
                          Foreground="{DynamicResource Accent}"
                          Content="من سوداتل"/>
-
+            
             <RadioButton x:Name="AnotherCompany" Margin="0,0,20,0"
-                         GroupName="TraineeType"
+                         GroupName="TraineeType" 
+                         IsChecked="{Binding WithOrganization,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
                          Foreground="{DynamicResource Accent}"
                          Content="من شركة اخرى"/>
         </StackPanel>
         
         <Grid x:Name="FromSudatel"
-              Grid.Column="0" Grid.Row="12" Grid.ColumnSpan="3"
+              Grid.Column="0" Grid.Row="12" Grid.ColumnSpan="3" Margin="0,10,0,0"
               Visibility="{Binding ElementName=Sudatel,Path=IsChecked,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource BooleanToVisibilityConverter}}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -162,25 +165,29 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-            <TextBlock Grid.Column="0" Grid.Row="0" Text="القطاع"  ></TextBlock>
-            <ComboBox Grid.Column="0" Grid.Row="1" 
+            <titleTextBlock:TitleTextBlock Grid.ColumnSpan="5" Text="من سوداتل "></titleTextBlock:TitleTextBlock>
+            
+            <TextBlock Grid.Column="0" Grid.Row="1" Text="القطاع"  ></TextBlock>
+            <ComboBox Grid.Column="0" Grid.Row="2" 
                       attachedProperties:LookupTypeAttached.LookupType="{x:Static common:LookupTypes.Division}" 
                       SelectedItem="{Binding Entity.Sudatel.Division,UpdateSourceTrigger=PropertyChanged}"></ComboBox>
             
-            <TextBlock Grid.Column="2" Grid.Row="0" Text="القسم"  ></TextBlock>
-            <TextBox  Grid.Column="2" Grid.Row="1"
+            <TextBlock Grid.Column="2" Grid.Row="1" Text="القسم"  ></TextBlock>
+            <TextBox  Grid.Column="2" Grid.Row="2"
                       Text="{Binding Entity.Sudatel.Department,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"></TextBox>
             
-            <TextBlock Grid.Column="4" Grid.Row="0" Text="رقم الملف"  ></TextBlock>
-            <TextBox Grid.Column="4" Grid.Row="1"
+            <TextBlock Grid.Column="4" Grid.Row="1" Text="رقم الملف"  ></TextBlock>
+            <TextBox Grid.Column="4" Grid.Row="2"
                      Text="{Binding Entity.Sudatel.SudatelEmployeeId,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"></TextBox>
 
         </Grid>
         
         <Grid x:Name="FromAnothercompany" 
-              Grid.Column="0" Grid.Row="12" Grid.ColumnSpan="3"
+              Grid.Column="0" Grid.Row="12" Grid.ColumnSpan="3" Margin="0,10,0,0"
               Visibility="{Binding ElementName=AnotherCompany,Path=IsChecked,UpdateSourceTrigger=PropertyChanged,Converter={StaticResource BooleanToVisibilityConverter}}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -193,29 +200,34 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-            <TextBlock Grid.Column="0" Grid.Row="0" Text="نوع المؤوسسة"  ></TextBlock>
-            <ComboBox Grid.Column="0" Grid.Row="1" 
+            <titleTextBlock:TitleTextBlock Grid.ColumnSpan="5" Text="من مؤوسسة خارجية "></titleTextBlock:TitleTextBlock>
+
+            <TextBlock Grid.Column="0" Grid.Row="1" Text="نوع المؤوسسة"  ></TextBlock>
+            <ComboBox Grid.Column="0" Grid.Row="2" 
                       attachedProperties:LookupTypeAttached.LookupType="{x:Static common:LookupTypes.OrganizationType}" 
                       ></ComboBox>
             
-            <TextBlock Grid.Column="2" Grid.Row="0" Text="اسم المؤوسسة"  ></TextBlock>
-            <ComboBox Grid.Column="2" Grid.Row="1" 
+            <TextBlock Grid.Column="2" Grid.Row="1" Text="اسم المؤوسسة"  ></TextBlock>
+            <ComboBox Grid.Column="2" Grid.Row="2" 
                       attachedProperties:LookupTypeAttached.LookupType="{x:Static common:LookupTypes.Organization}" 
                       ></ComboBox>
             
-            <TextBlock Grid.Column="0" Grid.Row="2" Text="المندوب"  ></TextBlock>
-            <TextBox Grid.Column="0" Grid.Row="3" 
+            <TextBlock Grid.Column="0" Grid.Row="3" Text="المندوب"  ></TextBlock>
+            <TextBox Grid.Column="0" Grid.Row="4" 
                      Text="{Binding Entity.TraineeOrganizations.CoordinatorName,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"></TextBox>
             
-            <TextBlock Grid.Column="2" Grid.Row="2" Text="البريد الالكتروني"  ></TextBlock>
-            <TextBox Grid.Column="2" Grid.Row="3" 
+            <TextBlock Grid.Column="2" Grid.Row="3" Text="البريد الالكتروني"  ></TextBlock>
+            <TextBox Grid.Column="2" Grid.Row="4" 
                      Text="{Binding Entity.TraineeOrganizations.Email,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"></TextBox>
         </Grid>
 
         <StackPanel Grid.Column="0" Grid.Row="13" Grid.ColumnSpan="3"
                     Margin="0,10,0,0" Orientation="Horizontal">
+            
+            <!-- TODO: create a good style for this kind of buttons -->
             <Button Content="حفظ" Width="80" Background="{DynamicResource Accent}"
                     Margin="5,0" Command="{Binding Save}"></Button>
             <!--<Button Content="حذف" Command="{Binding Delete}" Width="80" Margin="5,0" ></Button>-->

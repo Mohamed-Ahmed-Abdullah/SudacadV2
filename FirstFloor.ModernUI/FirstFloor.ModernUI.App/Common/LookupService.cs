@@ -9,6 +9,7 @@ using FirstFloor.ModernUI.App.Infrastructure.AttachedProperties;
 
 namespace FirstFloor.ModernUI.App.Common
 {
+    //TODO: change this to the real object type rather that LookupTypes.Jobs -> DataAccess.DbEntities.Job rather than LookupTypes -> Type (typeof)
     public enum LookupTypes
     {
         None,
@@ -63,7 +64,6 @@ namespace FirstFloor.ModernUI.App.Common
                     comboBox.ItemsSource =  PublicDatabaseContext.PublicContext.Organizations.ToList();
                 }
                     break;
-
             }
         }
     }

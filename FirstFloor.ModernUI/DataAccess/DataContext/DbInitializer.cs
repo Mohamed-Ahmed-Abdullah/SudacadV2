@@ -67,6 +67,28 @@ namespace DataAccess.DataContext
                 context.OrganizationTypes.Add(organizationType);
             #endregion
 
+            #region TraineeTypes
+            var traineeTypes = new List<TraineeType>();
+
+            traineeTypes.Add(new TraineeType { Id = 1, ArabicName = "فرد", EnglishName = "Individual", Notes = "" });
+            traineeTypes.Add(new TraineeType { Id = 2, ArabicName = "سوداتل", EnglishName = "Sudatel", Notes = "" });
+            traineeTypes.Add(new TraineeType { Id = 3, ArabicName = "جهة إعتبارية", EnglishName = "Organization", Notes = "" });
+
+            foreach (var traineeType in traineeTypes)
+                context.TraineeTypes.Add(traineeType);
+            #endregion
+
+            #region Organizations
+            var organizations = new List<Organization>();
+
+            organizations.Add(new Organization { Id = 1, ArabicName = "الراجحي", EnglishName = "Alrajihi", Notes = "" });
+            organizations.Add(new Organization { Id = 2, ArabicName = "جياد", EnglishName = "Jiad", Notes = "" });
+            organizations.Add(new Organization { Id = 3, ArabicName = "زين", EnglishName = "Zain", Notes = "" });
+
+            foreach (var organization in organizations)
+                context.Organizations.Add(organization);
+            #endregion
+
             base.Seed(context);
         }
     }

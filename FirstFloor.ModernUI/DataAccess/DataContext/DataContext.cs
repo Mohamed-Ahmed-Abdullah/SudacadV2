@@ -26,5 +26,6 @@ namespace DataAccess.DataContext
         public DbSet<TraineeOrganizations> TraineesOrganizations { get; set; }
         public DbSet<OrganizationType> OrganizationTypes { get; set; }
         public DbSet<Organization> Organizations { get; set; }
+        public DbSet<TraineeType> TraineeTypes { get; set; }
     }
 }
