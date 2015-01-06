@@ -22,5 +22,13 @@ namespace DataAccess.DbEntities
         public virtual Nationality Nationality { get; set; }
 
         public DateTime? IssueDate { get; set; }
+
+        public override string ToString()
+        {
+            return (Nationality == null ? "" : Nationality.ArabicName) +
+                   " " + (IdentityType == null ? "" : IdentityType.ArabicName) +
+                   " " + IdentityNumber +
+                   " " + (IssueDate == null ? "" : IssueDate.Value.ToString("dd MMM yyyy"));
+        }
     }
 }

@@ -337,6 +337,7 @@
                                             <RowDefinition Height="Auto"/>
                                             <RowDefinition Height="*"/>
                                             <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
                                         </Grid.RowDefinitions>
 
                                         <Grid.ColumnDefinitions>
@@ -377,6 +378,13 @@
                                                        Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}"/>
 
                                         </Grid>
+                                        <Border Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3"
+                                                 BorderThickness="0,1,0,0" BorderBrush="{DynamicResource ButtonBorder}">
+                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                                <TextBlock Text="#"></TextBlock>
+                                                <TextBlock Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type DataGrid}},Path=Items.Count}"></TextBlock>
+                                            </StackPanel>
+                                        </Border>
                                     </Grid>
                                 </ControlTemplate>
                             </ScrollViewer.Template>

@@ -82,10 +82,16 @@
     <Compile Include="Common\Controls\TitleTextBlock\TitleTextBlock.xaml.cs">
       <DependentUpon>TitleTextBlock.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Common\Converters\FullNameConverter.cs" />
     <Compile Include="Common\Converters\InverseStringToVisibilityConverter.cs" />
     <Compile Include="Common\Converters\StringToVisibilityConverter.cs" />
     <Compile Include="Common\Lookup.cs" />
     <Compile Include="Common\LookupService.cs" />
+    <Compile Include="Content\SettingsAppearance.xaml.cs">
+      <DependentUpon>SettingsAppearance.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Content\SettingsAppearanceViewModel.cs" />
+    <Compile Include="Infrastructure\ApplicationController.cs" />
     <Compile Include="Infrastructure\AttachedProperties\LookupType.cs" />
     <Compile Include="Infrastructure\DelegateCommands.cs" />
     <Compile Include="Infrastructure\UserControlBase.cs" />
@@ -99,6 +105,7 @@
     <Compile Include="Pages\TraineeView.xaml.cs">
       <DependentUpon>TraineeView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ParametersDtos\IntegerId.cs" />
     <Compile Include="SampleFormViewModel.cs" />
     <Compile Include="FlickrImageLoader.cs" />
     <Compile Include="LoremIpsumLoader.cs" />
@@ -235,6 +242,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Content\SettingsAppearance.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="MainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -264,6 +275,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\background.snowflakes.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Search32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SearchGray32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

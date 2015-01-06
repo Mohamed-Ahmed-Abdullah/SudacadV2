@@ -4,7 +4,7 @@
                   xmlns:mui="http://firstfloorsoftware.com/ModernUI"
                   Title="" IsTitleVisible="False" 
                   WindowState="Maximized"
-                  ContentSource="/Pages/TraineeView.xaml"
+                  ContentSource="/Pages/TraineesSearchView.xaml"
                   Width="800" Height="700">
     
     <mui:ModernWindow.TitleLinks>
@@ -14,7 +14,7 @@
     <mui:ModernWindow.MenuLinkGroups>
         <mui:LinkGroup DisplayName="المتدربين">
             <mui:LinkGroup.Links>
-                <mui:Link DisplayName="المتدربين" Source="/Pages/TraineeView.xaml" />
+                <mui:Link DisplayName="المتدربين" Source="/Pages/TraineesSearchView.xaml" />
                 <mui:Link DisplayName="تقارير" Source="/Pages/Introduction.xaml" />
             </mui:LinkGroup.Links>
         </mui:LinkGroup>

@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 using DataAccess.DbEntities;
 using FirstFloor.ModernUI.App.Common;
 using FirstFloor.ModernUI.App.Infrastructure;
+using FirstFloor.ModernUI.App.ParametersDtos;
 
 namespace FirstFloor.ModernUI.App.Pages
 {
@@ -33,14 +34,6 @@ namespace FirstFloor.ModernUI.App.Pages
 
         void TraineeView_Loaded(object sender, RoutedEventArgs e)
         {
-            var viewModel = ((TraineeViewModel) DataContext);
-            viewModel.Entity = new Trainee
-            {
-                Identity = new Identity(),
-                //Sudatel = new TraineeSudatel(),
-                //TraineeOrganizations = new TraineeOrganizations()
-            };
-            viewModel.DatabaseContext.Trainees.Add(viewModel.Entity);
         }
     }
 
@@ -56,7 +49,6 @@ namespace FirstFloor.ModernUI.App.Pages
         }
 
         public ICommand Save { get; set; }
-        public ICommand Load { get; set; }
         public ICommand Delete { get; set; }
         public ICommand TraineeTypeChanged { get; set; }
 
@@ -99,13 +91,21 @@ namespace FirstFloor.ModernUI.App.Pages
         {
             Alone = true;
 
-            Save = new DelegateCommand(() => DatabaseContext.SaveChanges());
+            Load = new DelegateCommand(LoadMethod);
+            Save = new DelegateCommand(() =>
+            {
+                //if(is insert new) we need to add it to the collection first, if update just save the new
+                if (Entity.TraineeId == 0)
+                    DatabaseContext.Trainees.Add(Entity);
+
+                DatabaseContext.SaveChanges();
+            });
             Delete = new DelegateCommand(() =>
             {
                 //TODO: delete checks
                 //TODO: delete it or conferm the error
             });
-
+            
             TraineeTypeChanged = new DelegateCommand(() =>
             {
                 Entity.Sudatel = null;
@@ -133,6 +133,29 @@ namespace FirstFloor.ModernUI.App.Pages
                 }
 
             });
+        }
+
+        private void LoadMethod()
+        {
+            var intId = GetParameter<IntegerId>();
+            if (intId != null && !intId.Id.HasValue)
+            {
+                var entity = DatabaseContext.Trainees.FirstOrDefault(f => f.TraineeId == intId.Id);
+                if (entity == null)
+                    NewEntity();
+                else
+                    Entity = entity;
+            }
+            else
+                NewEntity();
+        }
+
+        private void NewEntity()
+        {
+            Entity = new Trainee
+            {
+                Identity = new Identity(),
+            };
         }
     }
 }

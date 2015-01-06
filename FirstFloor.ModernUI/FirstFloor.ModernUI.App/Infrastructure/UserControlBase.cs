@@ -13,6 +13,19 @@ namespace FirstFloor.ModernUI.App.Infrastructure
         public UserControlBase()
         {
             FlowDirection = FlowDirection.RightToLeft;
+
+            //Execute Lod Command in each view 
+            Loaded+= (sender, e) =>
+            {
+                var viewModel = (ViewModelBase) DataContext;
+                if (viewModel == null)
+                    return;
+
+                if (viewModel.Load == null)
+                    return;
+
+                viewModel.Load.Execute(null);
+            };
         }
     }
 }
