@@ -48,8 +48,8 @@
                    HorizontalAlignment="Right" VerticalAlignment="Center"></Image>
         </Grid>
         
-        <Expander Grid.Column="0" Grid.Row="2" Header="شروط البحث" >
-            <Grid Background="White">
+        <Expander Grid.Column="0" Grid.Row="2" Header="شروط البحث" Background="Transparent" >
+            <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="10"/>
