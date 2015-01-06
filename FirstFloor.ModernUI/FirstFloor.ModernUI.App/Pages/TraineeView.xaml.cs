@@ -138,7 +138,7 @@ namespace FirstFloor.ModernUI.App.Pages
         private void LoadMethod()
         {
             var intId = GetParameter<IntegerId>();
-            if (intId != null && !intId.Id.HasValue)
+            if (intId != null && intId.Id.HasValue)
             {
                 var entity = DatabaseContext.Trainees.FirstOrDefault(f => f.TraineeId == intId.Id);
                 if (entity == null)

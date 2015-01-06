@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DataAccess.DataContext;
 using DataAccess.DbEntities;
 using FirstFloor.ModernUI.App.Infrastructure;
 using FirstFloor.ModernUI.App.ParametersDtos;
@@ -20,12 +21,18 @@ namespace FirstFloor.ModernUI.App.Pages
 {
     public partial class TraineesSearchView
     {
+
         public TraineesSearchView()
         {
             InitializeComponent();
 
             //TODO: should be changed to reflection
             DataContext = new TraineesSearchViewModel();
+        }
+
+        private void DataGrid_OnMouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            ViewModel<TraineesSearchViewModel>().OpenTrainee.Execute(DataGrid.SelectedItem);
         }
     }
 
@@ -57,9 +64,13 @@ namespace FirstFloor.ModernUI.App.Pages
         public ICommand Search { get; set; }
         public ICommand NewSearch { get; set; }
         public ICommand NewTrainee { get; set; }
+        public ICommand OpenTrainee { get; set; }
 
         public TraineesSearchViewModel()
         {
+            OpenTrainee = new DelegateCommand<Trainee>( (trainee) => 
+                Navigate("/Pages/TraineeView.xaml", new IntegerId() {Id = trainee.TraineeId}));
+
             NewTrainee = new DelegateCommand(() => Navigate("/Pages/TraineeView.xaml"));
 
             Search = new DelegateCommand(() =>
@@ -117,8 +128,7 @@ namespace FirstFloor.ModernUI.App.Pages
             NewSearch = new DelegateCommand(() =>
             {
                 
-            });
+            });            
         }
-
     }
 }

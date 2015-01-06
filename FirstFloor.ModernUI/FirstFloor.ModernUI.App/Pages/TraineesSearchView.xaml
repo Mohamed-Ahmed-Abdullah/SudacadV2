@@ -159,7 +159,7 @@
             </Grid>
         </Expander>
         
-        <DataGrid Name="DataGrid" Grid.Column="0" Grid.Row="3"
+        <DataGrid Name="DataGrid" Grid.Column="0" Grid.Row="3" MouseDoubleClick="DataGrid_OnMouseDoubleClick"
                   ItemsSource="{Binding ResultSet,UpdateSourceTrigger=PropertyChanged}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="الاسم بالعربية" >

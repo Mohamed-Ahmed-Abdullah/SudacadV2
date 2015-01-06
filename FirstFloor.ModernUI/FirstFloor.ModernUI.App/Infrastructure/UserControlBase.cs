@@ -27,5 +27,10 @@ namespace FirstFloor.ModernUI.App.Infrastructure
                 viewModel.Load.Execute(null);
             };
         }
+
+        public T ViewModel<T>()
+        {
+            return (T) DataContext;
+        }
     }
 }

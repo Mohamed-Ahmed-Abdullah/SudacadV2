@@ -11,7 +11,7 @@ namespace FirstFloor.ModernUI.App.Common.Converters
     {
         public object Convert(object[] values, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
-            return "Full Name, not emplemented";
+            return values[0] + " " + values[1] + " " + values[2] + " " + values[3];
         }
 
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, System.Globalization.CultureInfo culture)

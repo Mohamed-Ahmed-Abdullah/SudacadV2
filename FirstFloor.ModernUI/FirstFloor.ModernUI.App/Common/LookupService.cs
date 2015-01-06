@@ -30,38 +30,44 @@ namespace FirstFloor.ModernUI.App.Common
                 case LookupTypes.Jobs:
                 {
                     comboBox.DisplayMemberPath = "ArabicName";
+                    comboBox.SelectedValuePath = "Id";
                     comboBox.ItemsSource =  PublicDatabaseContext.PublicContext.Jobs.ToList();
                 }
                     break;
                 case LookupTypes.Nationalities:
                 {
                     comboBox.DisplayMemberPath = "ArabicName";
-                    comboBox.ItemsSource =  PublicDatabaseContext.PublicContext.Nationalities.ToList();
+                    comboBox.SelectedValuePath = "Id";
+                    comboBox.ItemsSource = PublicDatabaseContext.PublicContext.Nationalities.ToList();
                 }
                     break;
                 case LookupTypes.IdentityType:
                 {
                     comboBox.DisplayMemberPath = "ArabicName";
-                    comboBox.ItemsSource =  PublicDatabaseContext.PublicContext.IdentityTypes.ToList();
+                    comboBox.SelectedValuePath = "Id";
+                    comboBox.ItemsSource = PublicDatabaseContext.PublicContext.IdentityTypes.ToList();
                 }
                     break;
                 case LookupTypes.Division:
                 {
                     comboBox.DisplayMemberPath = "ArabicName";
-                    comboBox.ItemsSource =  PublicDatabaseContext.PublicContext.Divisions.ToList();
+                    comboBox.SelectedValuePath = "Id";
+                    comboBox.ItemsSource = PublicDatabaseContext.PublicContext.Divisions.ToList();
                 }
                     break;
 
                 case LookupTypes.OrganizationType:
                 {
                     comboBox.DisplayMemberPath = "ArabicName";
-                    comboBox.ItemsSource =  PublicDatabaseContext.PublicContext.OrganizationTypes.ToList();
+                    comboBox.SelectedValuePath = "Id";
+                    comboBox.ItemsSource = PublicDatabaseContext.PublicContext.OrganizationTypes.ToList();
                 }
                     break;
                 case LookupTypes.Organization:
                 {
                     comboBox.DisplayMemberPath = "ArabicName";
-                    comboBox.ItemsSource =  PublicDatabaseContext.PublicContext.Organizations.ToList();
+                    comboBox.SelectedValuePath = "Id";
+                    comboBox.ItemsSource = PublicDatabaseContext.PublicContext.Organizations.ToList();
                 }
                     break;
             }

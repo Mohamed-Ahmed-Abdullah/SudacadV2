@@ -90,6 +90,7 @@
         <TextBlock Grid.Column="0" Grid.Row="7" Text="الوظيفة"></TextBlock>
         <!-- TODO: when the user start typing the poppup should be open so he can select -->
         <ComboBox attachedProperties:LookupTypeAttached.LookupType="{x:Static common:LookupTypes.Jobs}" 
+                  SelectedValue="{Binding Entity.Job.Id,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
                   IsEditable="True" TabIndex="10"
                   SelectedItem="{Binding Entity.Job,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
                   Grid.Column="0" Grid.Row="8" ></ComboBox>
@@ -106,12 +107,14 @@
             <ComboBox attachedProperties:LookupTypeAttached.LookupType="{x:Static common:LookupTypes.Nationalities}" 
                   IsEditable="True" TabIndex="10"
                       SelectedIndex="0"
+                      SelectedValue="{Binding Entity.Identity.Nationality.Id,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
                   SelectedItem="{Binding Entity.Identity.Nationality,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
                   Grid.Column="0" ></ComboBox>
             
             <ComboBox attachedProperties:LookupTypeAttached.LookupType="{x:Static common:LookupTypes.IdentityType}" 
                       SelectedIndex="0"
                   IsEditable="True" TabIndex="11"
+                      SelectedValue="{Binding Entity.Identity.IdentityType.Id,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
                   SelectedItem="{Binding Entity.Identity.IdentityType,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
                   Grid.Column="1" ></ComboBox>
 
@@ -174,6 +177,7 @@
             <TextBlock Grid.Column="0" Grid.Row="1" Text="القطاع"  ></TextBlock>
             <ComboBox Grid.Column="0" Grid.Row="2" 
                       attachedProperties:LookupTypeAttached.LookupType="{x:Static common:LookupTypes.Division}" 
+                      SelectedValue="{Binding Entity.Sudatel.Division.Id,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
                       SelectedItem="{Binding Entity.Sudatel.Division,UpdateSourceTrigger=PropertyChanged}"></ComboBox>
             
             <TextBlock Grid.Column="2" Grid.Row="1" Text="القسم"  ></TextBlock>
@@ -207,11 +211,15 @@
 
             <TextBlock Grid.Column="0" Grid.Row="1" Text="نوع المؤوسسة"  ></TextBlock>
             <ComboBox Grid.Column="0" Grid.Row="2" 
+                      SelectedValue="{Binding Entity.TraineeOrganizations.OrganizationType.Id,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
+                      SelectedItem="{Binding Entity.TraineeOrganizations.OrganizationType,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
                       attachedProperties:LookupTypeAttached.LookupType="{x:Static common:LookupTypes.OrganizationType}" 
                       ></ComboBox>
             
             <TextBlock Grid.Column="2" Grid.Row="1" Text="اسم المؤوسسة"  ></TextBlock>
             <ComboBox Grid.Column="2" Grid.Row="2" 
+                      SelectedValue="{Binding Entity.TraineeOrganizations.Organization.Id,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
+                      SelectedItem="{Binding Entity.TraineeOrganizations.Organization,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
                       attachedProperties:LookupTypeAttached.LookupType="{x:Static common:LookupTypes.Organization}" 
                       ></ComboBox>
             
