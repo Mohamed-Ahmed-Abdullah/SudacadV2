@@ -8,7 +8,7 @@
              xmlns:attachedProperties="clr-namespace:FirstFloor.ModernUI.App.Infrastructure.AttachedProperties"
              xmlns:common="clr-namespace:FirstFloor.ModernUI.App.Common"
              xmlns:converters="clr-namespace:FirstFloor.ModernUI.App.Common.Converters"
-             mc:Ignorable="d" Background="White"
+             mc:Ignorable="d" 
              d:DesignHeight="600" 
                                 d:DesignWidth="500" 
                                 d:DataContext="{d:DesignInstance pages:TraineesSearchViewModel}">
@@ -189,15 +189,21 @@
                 <DataGridTextColumn Header="الايميل" Binding="{Binding EmailAddress}"></DataGridTextColumn>
                 <DataGridTextColumn Header="ملاحظات" Binding="{Binding Notes}"></DataGridTextColumn>
 
-                <DataGridTextColumn Header="القطاع" Binding="{Binding Sudatel.Division.ArabicName}"></DataGridTextColumn>
-                <DataGridTextColumn Header="القسم" Binding="{Binding Sudatel.Department}"></DataGridTextColumn>
-                <DataGridTextColumn Header="رقم الملف" Binding="{Binding Sudatel.SudatelEmployeeId}"></DataGridTextColumn>
+                <DataGridTextColumn Header="القطاع" Binding="{Binding Sudatel.Division.ArabicName}"
+                                    Visibility="Collapsed"></DataGridTextColumn>
+                <DataGridTextColumn Header="القسم" Binding="{Binding Sudatel.Department}"
+                                    Visibility="Collapsed"></DataGridTextColumn>
+                <DataGridTextColumn Header="رقم الملف" Binding="{Binding Sudatel.SudatelEmployeeId}"
+                                    Visibility="Collapsed"></DataGridTextColumn>
 
-                <DataGridTextColumn Header="نوع المؤوسسة" Binding="{Binding TraineeOrganizations.OrganizationType.ArabicName}"></DataGridTextColumn>
-                <DataGridTextColumn Header="اسم المؤوسسة" Binding="{Binding TraineeOrganizations.Organization.ArabicName}"></DataGridTextColumn>
-                <DataGridTextColumn Header="المندوب" Binding="{Binding TraineeOrganizations.CoordinatorName}"></DataGridTextColumn>
-                <DataGridTextColumn Header="الايميل" Binding="{Binding TraineeOrganizations.Email}"></DataGridTextColumn>
-
+                <DataGridTextColumn Header="نوع المؤوسسة" Binding="{Binding TraineeOrganizations.OrganizationType.ArabicName}"
+                                    Visibility="Collapsed"></DataGridTextColumn>
+                <DataGridTextColumn Header="اسم المؤوسسة" Binding="{Binding TraineeOrganizations.Organization.ArabicName}"
+                                    Visibility="Collapsed"></DataGridTextColumn>
+                <DataGridTextColumn Header="المندوب" Binding="{Binding TraineeOrganizations.CoordinatorName}"
+                                    Visibility="Collapsed"></DataGridTextColumn>
+                <DataGridTextColumn Header="الايميل" Binding="{Binding TraineeOrganizations.Email}"
+                                    Visibility="Collapsed"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

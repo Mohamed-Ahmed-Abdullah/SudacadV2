@@ -7,10 +7,11 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using DataAccess.DbEntities.Base;
 
 namespace DataAccess.DbEntities
 {
-    public class Trainee : INotifyPropertyChanged
+    public class Trainee : Names
     {
         private TraineeSudatel _sudatel;
         private TraineeOrganizations _traineeOrganizations;
@@ -24,24 +25,6 @@ namespace DataAccess.DbEntities
 
         [Column("JobId")]
         public virtual Job Job { get; set; }
-
-        [StringLength(50)] 
-        public string ArabicFirstName { get; set; }
-        [StringLength(50)]
-        public string ArabicSecondName { get; set; }
-        [StringLength(50)]
-        public string ArabicThirdName { get; set; }
-        [StringLength(50)]
-        public string ArabicLastName { get; set; }
-
-        [StringLength(50)]
-        public string EnglishFirstName { get; set; }
-        [StringLength(50)]
-        public string EnglishSecondName { get; set; }
-        [StringLength(50)]
-        public string EnglishThirdName { get; set; }
-        [StringLength(50)]
-        public string EnglishLastName { get; set; }
 
         [StringLength(15)]
         public string PhoneNumber { get; set; }
@@ -68,16 +51,6 @@ namespace DataAccess.DbEntities
 
         [Column("TraineeTypeId")]
         public virtual TraineeType TraineeType { get; set; }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        public void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
-
     }
 
     public enum Gender

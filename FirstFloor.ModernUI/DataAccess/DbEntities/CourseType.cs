@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DataAccess.DbEntities.Base;
 
-namespace DataAccess.DbEntities.Base
+namespace DataAccess.DbEntities
 {
-    public class JustId : EntityBase
+    public class CourseType : Lookup
     {
-        public int Id { get; set; }
     }
 }

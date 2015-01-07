@@ -49,8 +49,15 @@
     <Compile Include="DataContext\DataContext.cs" />
     <Compile Include="DataContext\DbInitializer.cs" />
     <Compile Include="DataContext\PublicDatabaseContext.cs" />
+    <Compile Include="DbEntities\Attachment.cs" />
+    <Compile Include="DbEntities\Base\EntityBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="DbEntities\Base\JustId.cs" />
+    <Compile Include="DbEntities\Base\Lookup.cs" />
     <Compile Include="DbEntities\Base\Names.cs" />
+    <Compile Include="DbEntities\Course.cs" />
+    <Compile Include="DbEntities\CourseType.cs" />
     <Compile Include="DbEntities\Division.cs" />
     <Compile Include="DbEntities\Identity.cs" />
     <Compile Include="DbEntities\IdentityType.cs" />
@@ -60,6 +67,9 @@
     <Compile Include="DbEntities\Nationality.cs" />
     <Compile Include="DbEntities\Organization.cs" />
     <Compile Include="DbEntities\OrganizationType.cs" />
+    <Compile Include="DbEntities\Teacher.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="DbEntities\Trainee.cs">
       <SubType>Code</SubType>
     </Compile>

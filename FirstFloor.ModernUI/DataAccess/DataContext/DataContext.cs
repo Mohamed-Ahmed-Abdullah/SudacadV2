@@ -27,5 +27,8 @@ namespace DataAccess.DataContext
         public DbSet<OrganizationType> OrganizationTypes { get; set; }
         public DbSet<Organization> Organizations { get; set; }
         public DbSet<TraineeType> TraineeTypes { get; set; }
+        public DbSet<Course> Courses { get; set; }
+        public DbSet<Teacher> Teachers { get; set; }
+        public DbSet<Attachment> Attachments { get; set; }
     }
 }

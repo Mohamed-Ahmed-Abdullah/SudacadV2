@@ -401,7 +401,7 @@
                                                                   ItemsSource="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type DataGrid}},Path=Columns}">
                                                         <ItemsControl.ItemTemplate>
                                                             <DataTemplate>
-                                                                <CheckBox Content="{Binding Header}"
+                                                                <CheckBox Content="{Binding Header}" Margin="2"
                                                                           IsChecked="{Binding Visibility,Converter={StaticResource InverseBoolToVisibilityConverter}}"></CheckBox>
                                                             </DataTemplate>
                                                         </ItemsControl.ItemTemplate>
