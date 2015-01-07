@@ -99,6 +99,10 @@
     <Compile Include="Pages\Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\TeacherView.xaml.cs">
+      <DependentUpon>TeacherView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Pages\TraineesSearchView.xaml.cs">
       <DependentUpon>TraineesSearchView.xaml</DependentUpon>
     </Compile>
@@ -257,6 +261,10 @@
     <Page Include="Pages\Settings.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\TeacherView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\TraineesSearchView.xaml">
       <SubType>Designer</SubType>

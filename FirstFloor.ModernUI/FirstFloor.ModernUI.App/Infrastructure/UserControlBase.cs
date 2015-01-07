@@ -17,7 +17,7 @@ namespace FirstFloor.ModernUI.App.Infrastructure
             //Execute Lod Command in each view 
             Loaded+= (sender, e) =>
             {
-                var viewModel = (ViewModelBase) DataContext;
+                var viewModel = DataContext as ViewModelBase;
                 if (viewModel == null)
                     return;
 

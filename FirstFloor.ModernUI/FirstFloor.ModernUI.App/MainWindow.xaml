@@ -4,7 +4,7 @@
                   xmlns:mui="http://firstfloorsoftware.com/ModernUI"
                   Title="" IsTitleVisible="False" 
                   WindowState="Maximized"
-                  ContentSource="/Pages/TraineesSearchView.xaml"
+                  ContentSource="/Pages/TeacherView.xaml"
                   Width="800" Height="700">
     
     <mui:ModernWindow.TitleLinks>

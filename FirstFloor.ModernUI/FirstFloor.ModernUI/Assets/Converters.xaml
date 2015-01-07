@@ -9,5 +9,4 @@
     <converters:ToUpperConverter x:Key="ToUpperConverter" />
     <converters:ToLowerConverter x:Key="ToLowerConverter" />
     <converters:InverseBoolToVisibilityConverter x:Key="InverseBoolToVisibilityConverter" />
-
 </ResourceDictionary>

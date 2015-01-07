@@ -14,7 +14,7 @@ namespace FirstFloor.ModernUI.Windows.Converters
     public class InverseBoolToVisibilityConverter : IValueConverter
     {
         /// <summary>
-        /// 
+        /// asd
         /// </summary>
         /// <param name="value"></param>
         /// <param name="targetType"></param>
@@ -32,7 +32,7 @@ namespace FirstFloor.ModernUI.Windows.Converters
             return false;
         }
         /// <summary>
-        /// 
+        /// asd
         /// </summary>
         /// <param name="value"></param>
         /// <param name="targetType"></param>
