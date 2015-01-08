@@ -30,5 +30,8 @@ namespace DataAccess.DataContext
         public DbSet<Course> Courses { get; set; }
         public DbSet<Teacher> Teachers { get; set; }
         public DbSet<Attachment> Attachments { get; set; }
+        public DbSet<Room> Rooms { get; set; }
+        public DbSet<Reservation> Reservations { get; set; }
+        public DbSet<Batch> Batchs { get; set; }
     }
 }

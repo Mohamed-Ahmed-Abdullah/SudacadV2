@@ -32,5 +32,7 @@ namespace FirstFloor.ModernUI.App.Infrastructure
         {
             return (T) DataContext;
         }
+
+
     }
 }

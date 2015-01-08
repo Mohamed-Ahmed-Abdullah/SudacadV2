@@ -19,6 +19,8 @@ namespace FirstFloor.ModernUI.App.Common
         Division,
         OrganizationType,
         Organization,
+        Cources,
+        Rooms,
     }
 
     public class LookupService
@@ -68,6 +70,20 @@ namespace FirstFloor.ModernUI.App.Common
                     comboBox.DisplayMemberPath = "ArabicName";
                     comboBox.SelectedValuePath = "Id";
                     comboBox.ItemsSource = PublicDatabaseContext.PublicContext.Organizations.ToList();
+                }
+                    break;
+                case LookupTypes.Cources:
+                {
+                    comboBox.DisplayMemberPath = "ArabicName";
+                    comboBox.SelectedValuePath = "CourseId";
+                    comboBox.ItemsSource = PublicDatabaseContext.PublicContext.Courses.ToList();
+                }
+                    break;
+                case LookupTypes.Rooms:
+                {
+                    comboBox.DisplayMemberPath = "ArabicName";
+                    comboBox.SelectedValuePath = "Id";
+                    comboBox.ItemsSource = PublicDatabaseContext.PublicContext.Rooms.ToList();
                 }
                     break;
             }

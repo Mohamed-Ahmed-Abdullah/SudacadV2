@@ -56,6 +56,9 @@
     <Compile Include="DbEntities\Base\JustId.cs" />
     <Compile Include="DbEntities\Base\Lookup.cs" />
     <Compile Include="DbEntities\Base\Names.cs" />
+    <Compile Include="DbEntities\Batch.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="DbEntities\Course.cs" />
     <Compile Include="DbEntities\CourseType.cs" />
     <Compile Include="DbEntities\Division.cs" />
@@ -67,6 +70,10 @@
     <Compile Include="DbEntities\Nationality.cs" />
     <Compile Include="DbEntities\Organization.cs" />
     <Compile Include="DbEntities\OrganizationType.cs" />
+    <Compile Include="DbEntities\Reservation.cs" />
+    <Compile Include="DbEntities\Room.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="DbEntities\Teacher.cs">
       <SubType>Code</SubType>
     </Compile>

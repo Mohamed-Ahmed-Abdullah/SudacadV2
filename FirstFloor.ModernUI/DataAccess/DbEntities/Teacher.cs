@@ -32,5 +32,7 @@ namespace DataAccess.DbEntities
         public virtual List<Course> Courses { get; set; }
 
         public virtual List<Attachment> Attachments { get; set; }
+
+        //TODO: i need to put the money that he take for each course per hour
     }
 }

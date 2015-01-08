@@ -89,6 +89,55 @@ namespace DataAccess.DataContext
                 context.Organizations.Add(organization);
             #endregion
 
+            #region Courses
+
+            var cources = new List<Course>
+            {
+                new Course {CourseId = 1, ArabicName = "اكسل", EnglishName = "Excel", Notes = ""},
+                new Course {CourseId = 2, ArabicName = "وورد", EnglishName = "Word", Notes = ""},
+                new Course {CourseId = 3, ArabicName = "شبكات", EnglishName = "Networks", Notes = ""}
+            };
+
+            foreach (var cource in cources)
+                context.Courses.Add(cource);
+
+            #endregion
+
+            #region Rooms
+
+            context.Rooms.AddRange(new List<Room>
+            {
+                new Room {Id = 1, ArabicName = "السلام", EnglishName = "Excel", Notes = ""},
+                new Room {Id = 2, ArabicName = "الطابق الاول", EnglishName = "Word", Notes = ""},
+                new Room {Id = 3, ArabicName = "الطابق الثاني", EnglishName = "Networks", Notes = ""}
+            });
+
+            #endregion
+
+            #region Teachers
+
+            context.SaveChanges();
+
+            context.Teachers.AddRange(new List<Teacher>
+            {
+                new Teacher {TeacherId = 1, ArabicFirstName = "محمد", EnglishFirstName = "mohamed",Identity = new Identity
+                {
+                    IdentityNumber = "123",
+                    IdentityType = context.IdentityTypes.First(),
+                    Nationality = context.Nationalities.First(),
+                    IssueDate = DateTime.Now
+                }},
+                new Teacher {TeacherId = 2, ArabicFirstName = "احمد", EnglishFirstName = "ahmed",Identity = new Identity
+                {
+                    IdentityNumber = "456",
+                    IdentityType = context.IdentityTypes.First(),
+                    Nationality = context.Nationalities.First(),
+                    IssueDate = DateTime.Now
+                }},
+            });
+
+            #endregion
+
             base.Seed(context);
         }
     }
