@@ -1,0 +1,166 @@
+﻿<infrastructure:UserControlBase x:Class="FirstFloor.ModernUI.App.Pages.TeachersSearchView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:infrastructure="clr-namespace:FirstFloor.ModernUI.App.Infrastructure"
+             xmlns:converters="clr-namespace:FirstFloor.ModernUI.App.Common.Converters"
+             xmlns:attachedProperties="clr-namespace:FirstFloor.ModernUI.App.Infrastructure.AttachedProperties"
+             xmlns:common="clr-namespace:FirstFloor.ModernUI.App.Common"
+             xmlns:pages="clr-namespace:FirstFloor.ModernUI.App.Pages"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="500" d:DataContext="{d:DesignInstance pages:TeachersSearchViewModel}">
+    
+    <infrastructure:UserControlBase.Resources>
+        <Style BasedOn="{StaticResource {x:Type TextBlock}}"
+               TargetType="{x:Type TextBlock}">
+            <Setter Property="Margin" Value="2,5,2,2"></Setter>
+        </Style>
+        <Style BasedOn="{StaticResource {x:Type DataGrid}}"
+               TargetType="{x:Type DataGrid}">
+            <Setter Property="AutoGenerateColumns" Value="False"></Setter>
+            <Setter Property="IsReadOnly" Value="True"></Setter>
+        </Style>
+        <converters:FullNameConverter x:Key="FullNameConverter"></converters:FullNameConverter>
+    </infrastructure:UserControlBase.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal">
+            <Button Content="استاذ جديد" 
+                    Command="{Binding NewTeacher}"
+                    Margin="0,0,10,0" ></Button>
+        </StackPanel>
+
+        <Grid Grid.Column="0" Grid.Row="1" Margin="0,8" Width="250" HorizontalAlignment="Left">
+            <TextBox Padding="0,0,10,0" VerticalAlignment="Center"
+                     Height="22"
+                     Text=""></TextBox>
+            <Image Source="../Resources/SearchGray32.png"
+                   Width="16" Height="16" Margin="4" 
+                   HorizontalAlignment="Right" VerticalAlignment="Center"></Image>
+        </Grid>
+
+        <Expander Grid.Column="0" Grid.Row="2" Header="شروط البحث" Background="Transparent" >
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Column="0" Grid.Row="0" Foreground="{DynamicResource ButtonText}"
+                           Text="الاسم العربي يحتوي على"></TextBlock>
+                <TextBox Grid.Column="0" Grid.Row="1"
+                         Text="{Binding ArabicNameContains,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"></TextBox>
+
+                <TextBlock Grid.Column="2" Grid.Row="0" Foreground="{DynamicResource ButtonText}"
+                           Text="الاسم الانجليزي يحتوي على"></TextBlock>
+                <TextBox Grid.Column="2" Grid.Row="1"
+                         Text="{Binding EnglishNameContains,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"></TextBox>
+
+                <TextBlock Grid.Column="0" Grid.Row="4" Foreground="{DynamicResource ButtonText}"
+                           Text="رقم التلفون يحتوي على"></TextBlock>
+                <TextBox Grid.Column="0" Grid.Row="5"
+                         Text="{Binding TelephoneNumberContains,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"></TextBox>
+
+                <TextBlock Grid.Column="2" Grid.Row="4" Foreground="{DynamicResource ButtonText}"
+                           Text="الايميل يحتوي على"></TextBlock>
+                <TextBox Grid.Column="2" Grid.Row="5" 
+                         Text="{Binding EmailContains,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"></TextBox>
+                
+                <TextBlock Grid.Column="0" Grid.Row="6" Foreground="{DynamicResource ButtonText}"
+                           Text="الهوية"></TextBlock>
+                <Grid Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <ComboBox attachedProperties:LookupTypeAttached.LookupType="{x:Static common:LookupTypes.Nationalities}" 
+                              IsEditable="True" TabIndex="10"
+                              SelectedIndex="0"
+                              SelectedItem="{Binding Nationality,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
+                              Grid.Column="0" ></ComboBox>
+
+                    <ComboBox attachedProperties:LookupTypeAttached.LookupType="{x:Static common:LookupTypes.IdentityType}" 
+                              SelectedIndex="0"
+                              IsEditable="True" TabIndex="11"
+                              SelectedItem="{Binding IdentityType,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
+                              Grid.Column="1" ></ComboBox>
+
+                    <TextBox Grid.Column="2" TabIndex="12"
+                             Text="{Binding IdentityNumber,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"></TextBox>
+                </Grid>
+
+                <TextBlock Grid.Column="2" Grid.Row="6" Foreground="{DynamicResource ButtonText}"
+                           Text="الملاحظات تحتوي على"></TextBlock>
+                <TextBox Grid.Column="2" Grid.Row="7"
+                         Text="{Binding NotesContains,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"></TextBox>
+
+                <StackPanel Grid.Column="0" Grid.Row="10" Grid.ColumnSpan="3"
+                            Margin="0,8"
+                            Orientation="Horizontal" >
+                    <Button Content="ابحث" Command="{Binding Search}" Padding="20,1" Margin="4,0"
+                            Background="{DynamicResource Accent}"></Button>
+                    <Button Content="تفريغ الحقول" Command="{Binding NewSearch}"
+                            Padding="20,1" Margin="4,0"></Button>
+                </StackPanel>
+            </Grid>
+        </Expander>
+
+        <DataGrid Name="DataGrid" Grid.Column="0" Grid.Row="3" MouseDoubleClick="DataGrid_OnMouseDoubleClick"
+                  ItemsSource="{Binding ResultSet,UpdateSourceTrigger=PropertyChanged}">
+            <DataGrid.Columns>
+                
+                <DataGridTextColumn Header="الاسم " >
+                    <DataGridTextColumn.Binding>
+                        <MultiBinding Converter="{StaticResource FullNameConverter}">
+                            <Binding Path="ArabicFirstName"></Binding>
+                            <Binding Path="ArabicSecondName"></Binding>
+                            <Binding Path="ArabicThirdName"></Binding>
+                            <Binding Path="ArabicLastName"></Binding>
+                        </MultiBinding>
+                    </DataGridTextColumn.Binding>
+                </DataGridTextColumn>
+                
+                <DataGridTextColumn Visibility="Collapsed" Header="الاسم بالانجليزية" >
+                    <DataGridTextColumn.Binding>
+                        <MultiBinding Converter="{StaticResource FullNameConverter}">
+                            <Binding Path="EnglishFirstName"></Binding>
+                            <Binding Path="EnglishSecondName"></Binding>
+                            <Binding Path="EnglishThirdName"></Binding>
+                            <Binding Path="EnglishLastName"></Binding>
+                        </MultiBinding>
+                    </DataGridTextColumn.Binding>
+                </DataGridTextColumn>
+                
+                <DataGridTextColumn Header="الهوية" Binding="{Binding Identity}"></DataGridTextColumn>
+                <DataGridTextColumn Header="رقم التلفون" Binding="{Binding PhoneNumber}"></DataGridTextColumn>
+                <DataGridTextColumn Header="الايميل" Binding="{Binding EmailAddress}"></DataGridTextColumn>
+                <DataGridTextColumn Header="ملاحظات" Binding="{Binding Notes}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</infrastructure:UserControlBase>

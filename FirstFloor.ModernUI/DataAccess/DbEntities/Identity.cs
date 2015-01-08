@@ -26,9 +26,9 @@ namespace DataAccess.DbEntities
         public override string ToString()
         {
             return (Nationality == null ? "" : Nationality.ArabicName) +
-                   " " + (IdentityType == null ? "" : IdentityType.ArabicName) +
-                   " " + IdentityNumber +
-                   " " + (IssueDate == null ? "" : IssueDate.Value.ToString("dd MMM yyyy"));
+                   " | " + (IdentityType == null ? "" : IdentityType.ArabicName) +
+                   " | " + IdentityNumber +
+                   " | " + (IssueDate == null ? "" : IssueDate.Value.ToString("dd MMM yyyy"));
         }
     }
 }

@@ -92,12 +92,17 @@
     </Compile>
     <Compile Include="Content\SettingsAppearanceViewModel.cs" />
     <Compile Include="Infrastructure\ApplicationController.cs" />
+    <Compile Include="Infrastructure\AttachedProperties\DataGridTextColumnFlowDirection.cs" />
     <Compile Include="Infrastructure\AttachedProperties\LookupType.cs" />
     <Compile Include="Infrastructure\DelegateCommands.cs" />
     <Compile Include="Infrastructure\UserControlBase.cs" />
     <Compile Include="Infrastructure\ViewModelBase.cs" />
     <Compile Include="Pages\Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TeachersSearchView.xaml.cs">
+      <DependentUpon>TeachersSearchView.xaml</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Pages\TeacherView.xaml.cs">
       <DependentUpon>TeacherView.xaml</DependentUpon>
@@ -250,6 +255,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Infrastructure\UserControlBase.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -261,6 +270,10 @@
     <Page Include="Pages\Settings.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\TeachersSearchView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\TeacherView.xaml">
       <SubType>Designer</SubType>

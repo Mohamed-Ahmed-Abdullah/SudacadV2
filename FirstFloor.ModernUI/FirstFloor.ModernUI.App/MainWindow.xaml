@@ -4,7 +4,7 @@
                   xmlns:mui="http://firstfloorsoftware.com/ModernUI"
                   Title="" IsTitleVisible="False" 
                   WindowState="Maximized"
-                  ContentSource="/Pages/TeacherView.xaml"
+                  ContentSource="/Pages/TeachersSearchView.xaml"
                   Width="800" Height="700">
     
     <mui:ModernWindow.TitleLinks>
@@ -26,7 +26,7 @@
         </mui:LinkGroup>
         <mui:LinkGroup DisplayName="الاساتذة">
             <mui:LinkGroup.Links>
-                <mui:Link DisplayName="الاساتذة" Source="/Pages/Introduction.xaml" />
+                <mui:Link DisplayName="الاساتذة" Source="/Pages/TeachersSearchView.xaml" />
                 <mui:Link DisplayName="تقارير" Source="/Pages/Introduction.xaml" />
             </mui:LinkGroup.Links>
         </mui:LinkGroup>
