@@ -3,11 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                                 designTime:DesignTime.Background="White"
              xmlns:infrastructure="clr-namespace:FirstFloor.ModernUI.App.Infrastructure"
              xmlns:titleTextBlock="clr-namespace:FirstFloor.ModernUI.App.Common.Controls.TitleTextBlock"
              xmlns:attachedProperties="clr-namespace:FirstFloor.ModernUI.App.Infrastructure.AttachedProperties"
              xmlns:common="clr-namespace:FirstFloor.ModernUI.App.Common"
              xmlns:pages="clr-namespace:FirstFloor.ModernUI.App.Pages"
+             xmlns:designTime="clr-namespace:FirstFloor.ModernUI.App.Infrastructure.DesignTime"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="600" d:DataContext="{d:DesignInstance pages:TeacherViewModel}">
     <Grid>
