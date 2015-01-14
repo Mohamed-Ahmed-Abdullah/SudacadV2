@@ -4,7 +4,7 @@
                   xmlns:mui="http://firstfloorsoftware.com/ModernUI"
                   Title="" IsTitleVisible="False" 
                   WindowState="Maximized"
-                  ContentSource="/Pages/BatchView.xaml"
+                  ContentSource="/Pages/BatchsSearchView.xaml"
                   Width="800" Height="700">
     
     <mui:ModernWindow.TitleLinks>
@@ -15,18 +15,21 @@
         <mui:LinkGroup DisplayName="المتدربين">
             <mui:LinkGroup.Links>
                 <mui:Link DisplayName="المتدربين" Source="/Pages/TraineesSearchView.xaml" />
+                <mui:Link DisplayName="كشف حساب" Source="/Pages/Introduction.xaml" />
                 <mui:Link DisplayName="تقارير" Source="/Pages/Introduction.xaml" />
             </mui:LinkGroup.Links>
         </mui:LinkGroup>
         <mui:LinkGroup DisplayName="الدورات التدريبية">
             <mui:LinkGroup.Links>
-                <mui:Link DisplayName="الدورات التدريبية" Source="/Pages/Introduction.xaml" />
+                <mui:Link DisplayName="الدورات التدريبية" Source="/Pages/BatchsSearchView.xaml" />
+                <mui:Link DisplayName="كشف حساب" Source="/Pages/Introduction.xaml" />
                 <mui:Link DisplayName="تقارير" Source="/Pages/Introduction.xaml" />
             </mui:LinkGroup.Links>
         </mui:LinkGroup>
         <mui:LinkGroup DisplayName="الاساتذة">
             <mui:LinkGroup.Links>
                 <mui:Link DisplayName="الاساتذة" Source="/Pages/TeachersSearchView.xaml" />
+                <mui:Link DisplayName="كشف حساب" Source="/Pages/Introduction.xaml" />
                 <mui:Link DisplayName="تقارير" Source="/Pages/Introduction.xaml" />
             </mui:LinkGroup.Links>
         </mui:LinkGroup>
@@ -42,10 +45,19 @@
                 <mui:Link DisplayName="تقارير" Source="/Pages/Introduction.xaml" />
             </mui:LinkGroup.Links>
         </mui:LinkGroup>
+        
         <mui:LinkGroup DisplayName="تقارير" GroupKey="settings">
             <mui:LinkGroup.Links>
                 <mui:Link DisplayName="تقارير عامة" Source="/Pages/Settings.xaml" />
                 <mui:Link DisplayName="تقارير المتدربين" Source="/Pages/Settings.xaml" />
+            </mui:LinkGroup.Links>
+        </mui:LinkGroup>
+        
+        <mui:LinkGroup DisplayName="المالية" GroupKey="settings">
+            <mui:LinkGroup.Links>
+                <mui:Link DisplayName="الحسابات" Source="/Pages/Settings.xaml" />
+                <mui:Link DisplayName="القيود المالية" Source="/Pages/Settings.xaml" />
+                <mui:Link DisplayName="تقارير عامة" Source="/Pages/Settings.xaml" />
             </mui:LinkGroup.Links>
         </mui:LinkGroup>
     </mui:ModernWindow.MenuLinkGroups>
