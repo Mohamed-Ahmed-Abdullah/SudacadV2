@@ -1,8 +1,10 @@
-﻿using System.Linq;
+﻿using System.Diagnostics;
+using System.Linq;
 using System.Windows.Input;
 using DataAccess.DbEntities;
 using FirstFloor.ModernUI.App.Infrastructure;
 using FirstFloor.ModernUI.App.ParametersDtos;
+using FirstFloor.ModernUI.Windows.Controls;
 
 namespace FirstFloor.ModernUI.App.Pages.Teachers
 {
@@ -25,9 +27,16 @@ namespace FirstFloor.ModernUI.App.Pages.Teachers
         }
 
         public ICommand Save { get; set; }
+        public ICommand AddTeacherCources { get; set; }
 
         public TeacherViewModel()
         {
+            AddTeacherCources = new DelegateCommand(() =>
+            {
+                var result = ShowDialog(new AddTeacherCource());
+                Debug.WriteLine("");
+            });
+
             Load = new DelegateCommand(LoadMethod);
             Save = new DelegateCommand(() =>
             {

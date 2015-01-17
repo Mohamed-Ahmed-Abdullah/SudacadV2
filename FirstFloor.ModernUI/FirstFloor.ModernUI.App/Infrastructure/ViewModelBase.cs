@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using DataAccess.DataContext;
+using FirstFloor.ModernUI.Windows.Controls;
 using FirstFloor.ModernUI.Windows.Navigation;
 
 namespace FirstFloor.ModernUI.App.Infrastructure
@@ -30,6 +31,20 @@ namespace FirstFloor.ModernUI.App.Infrastructure
         {
             LinkCommands.NavigateLink.Execute(to, null);
             ApplicationController.Parameter = parameter;
+        }
+
+        public object ShowDialog(IDialog view)
+        {
+            var dialog = new ModernDialog
+            {
+                Title = view.Title,
+                Content = view,
+                Buttons = null
+            };
+
+            dialog.ShowDialog();
+            
+            return view.DialogResult;
         }
 
         public T GetParameter<T>()

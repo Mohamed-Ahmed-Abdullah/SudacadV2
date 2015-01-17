@@ -12,7 +12,8 @@
              xmlns:designTime="clr-namespace:FirstFloor.ModernUI.App.Infrastructure.DesignTime"
              xmlns:tagControl="clr-namespace:FirstFloor.ModernUI.App.Common.Controls.TagControl"
                                 xmlns:teachers="clr-namespace:FirstFloor.ModernUI.App.Pages.Teachers"
-             mc:Ignorable="d" 
+                                xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+                                mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="600" d:DataContext="{d:DesignInstance teachers:TeacherViewModel}">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -119,8 +120,13 @@
         
         
         <titleTextBlock:TitleTextBlock Grid.Column="0" Grid.Row="10" Grid.ColumnSpan="3" Text="الكورسات"/>
-        
-        <DataGrid Grid.Column="0" Grid.Row="11" Grid.ColumnSpan="3">
+        <mui:ModernButton Grid.Column="0" Grid.Row="10" Style="{StaticResource AddButton}"                          
+                Command="{Binding AddTeacherCources}"
+                VerticalAlignment="Top" HorizontalAlignment="Left"
+                Margin="55,0,2,2" Background="Green"
+                ></mui:ModernButton>
+        <DataGrid Grid.Column="0" Grid.Row="11" Grid.ColumnSpan="3"
+                  ItemsSource="{Binding }">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="الكورس"></DataGridTextColumn>
                 <DataGridTextColumn Header="سعر المدرب"></DataGridTextColumn>

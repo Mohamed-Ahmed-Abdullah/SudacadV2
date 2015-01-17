@@ -9,6 +9,7 @@
     <Border Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" 
             BorderThickness="0,0,0,1" BorderBrush="{StaticResource Accent}">
         <TextBlock Text="{Binding Text,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" 
+                   VerticalAlignment="Bottom"
                    Foreground="{StaticResource Accent}"></TextBlock>
     </Border>
 </UserControl>

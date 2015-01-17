@@ -1,0 +1,37 @@
+﻿<infrastructure:UserControlBase x:Class="FirstFloor.ModernUI.App.Pages.Teachers.AddTeacherCource"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:infrastructure="clr-namespace:FirstFloor.ModernUI.App.Infrastructure"
+             xmlns:attachedProperties="clr-namespace:FirstFloor.ModernUI.App.Infrastructure.AttachedProperties"
+             xmlns:common="clr-namespace:FirstFloor.ModernUI.App.Common"
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             mc:Ignorable="d" Width="300" Height="150"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid Style="{StaticResource TextBoxAsLabelsContainer}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <TextBlock Text="الكورس"></TextBlock>
+        <ComboBox attachedProperties:LookupTypeAttached.LookupType="{x:Static common:LookupTypes.Cources}" 
+                  SelectedValue="{Binding Entity.Job.Id,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
+                  IsEditable="True" TabIndex="10"
+                  SelectedItem="{Binding Entity.Job,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
+                  Grid.Column="0" Grid.Row="1" ></ComboBox>
+
+        <TextBlock Grid.Row="2" Text="سعر المدرب"></TextBlock>
+        <TextBox Grid.Row="3"></TextBox>
+        
+        <StackPanel Orientation="Horizontal" Grid.Row="4" HorizontalAlignment="Right">
+            <mui:ModernButton Style="{StaticResource CancelButton}" Margin="5" Click="ButtonBase_OnClick"/>
+            <mui:ModernButton Style="{StaticResource SaveButton}" Margin="5" Click="Save_OnClick"/>
+        </StackPanel>
+    </Grid>
+</infrastructure:UserControlBase>

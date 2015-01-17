@@ -109,7 +109,9 @@
     <Compile Include="Infrastructure\AttachedProperties\LookupType.cs" />
     <Compile Include="Infrastructure\DelegateCommands.cs" />
     <Compile Include="Infrastructure\DesignTime\DesignTime.cs" />
+    <Compile Include="Infrastructure\IDialog.cs" />
     <Compile Include="Infrastructure\UserControlBase.cs" />
+    <Compile Include="Infrastructure\UserControlDialogBase.cs" />
     <Compile Include="Infrastructure\ViewModelBase.cs" />
     <Compile Include="Pages\Batchs\BatchsSearchView.xaml.cs">
       <DependentUpon>BatchsSearchView.xaml</DependentUpon>
@@ -119,6 +121,9 @@
     </Compile>
     <Compile Include="Pages\Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Teachers\AddTeacherCource.xaml.cs">
+      <DependentUpon>AddTeacherCource.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Teachers\TeachersSearchView.xaml.cs">
       <DependentUpon>TeachersSearchView.xaml</DependentUpon>
@@ -310,6 +315,10 @@
     <Page Include="Pages\Settings.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Teachers\AddTeacherCource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Teachers\TeachersSearchView.xaml">
       <SubType>Designer</SubType>

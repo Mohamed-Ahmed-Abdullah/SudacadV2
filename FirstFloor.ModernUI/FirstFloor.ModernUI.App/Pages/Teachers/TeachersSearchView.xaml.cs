@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Input;
 using DataAccess.DbEntities;
@@ -48,10 +49,11 @@ namespace FirstFloor.ModernUI.App.Pages.Teachers
 
         public TeachersSearchViewModel()
         {
+            //TODO: create a method that you gave type TeacherView and it return the specific URI cuz this will be maintainable and robust, unlike the current string 
             OpenTeacher = new DelegateCommand<Teacher>(trainee =>
-                Navigate("/Pages/TeacherView.xaml", new IntegerId { Id = trainee.TeacherId }));
+                Navigate("/Pages/Teachers/TeacherView.xaml", new IntegerId { Id = trainee.TeacherId }));
 
-            NewTeacher = new DelegateCommand(() => Navigate("/Pages/TeacherView.xaml"));
+            NewTeacher = new DelegateCommand(() => Navigate("/Pages/Teachers/TeacherView.xaml"));
 
             Search = new DelegateCommand(() =>
             {
