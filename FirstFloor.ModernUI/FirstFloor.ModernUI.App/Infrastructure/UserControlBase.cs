@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Markup;
 
 namespace FirstFloor.ModernUI.App.Infrastructure
 {
@@ -32,7 +33,5 @@ namespace FirstFloor.ModernUI.App.Infrastructure
         {
             return (T) DataContext;
         }
-
-
     }
 }

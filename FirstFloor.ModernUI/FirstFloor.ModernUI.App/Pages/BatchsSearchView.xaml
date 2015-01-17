@@ -11,19 +11,6 @@
              xmlns:pages="clr-namespace:FirstFloor.ModernUI.App.Pages"
              mc:Ignorable="d"  designTime:DesignTime.Background="White"
              d:DesignHeight="600" d:DesignWidth="500" d:DataContext="{d:DesignInstance pages:BatchsSearchViewModel}">
-    <infrastructure:UserControlBase.Resources>
-        <Style BasedOn="{StaticResource {x:Type TextBlock}}"
-               TargetType="{x:Type TextBlock}">
-            <Setter Property="Margin" Value="2,5,2,2"></Setter>
-        </Style>
-        <Style BasedOn="{StaticResource {x:Type DataGrid}}"
-               TargetType="{x:Type DataGrid}">
-            <Setter Property="AutoGenerateColumns" Value="False"></Setter>
-            <Setter Property="IsReadOnly" Value="True"></Setter>
-        </Style>
-        <converters:FullNameConverter x:Key="FullNameConverter"/>
-    </infrastructure:UserControlBase.Resources>
-
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -34,7 +21,8 @@
 
         <StackPanel Orientation="Horizontal">
             <Button Content="دورة تدريبية جديدة" 
-                    Command="{Binding New}"
+                    
+                    Command="{Binding New}"                                        
                     Margin="0,0,10,0" ></Button>
         </StackPanel>
 
@@ -49,7 +37,9 @@
         </Grid>
 
         <Expander Grid.Column="0" Grid.Row="2" Header="شروط البحث" Background="Transparent" >
-            <Grid>
+            <Grid Style="{StaticResource TextBoxAsLabelsContainer}" >
+                <Grid.Resources>
+                </Grid.Resources>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="10"/>

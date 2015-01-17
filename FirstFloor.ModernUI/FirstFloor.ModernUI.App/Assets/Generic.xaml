@@ -1,0 +1,20 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converters="clr-namespace:FirstFloor.ModernUI.App.Common.Converters">
+
+    <Style BasedOn="{StaticResource {x:Type DataGrid}}"
+               TargetType="{x:Type DataGrid}">
+        <Setter Property="AutoGenerateColumns" Value="False"></Setter>
+        <Setter Property="IsReadOnly" Value="True"></Setter>
+    </Style>
+
+    <converters:FullNameConverter x:Key="FullNameConverter"/>
+
+    <Style x:Key="TextBoxAsLabelsContainer" TargetType="Grid">
+        <Style.Resources>
+            <Style TargetType="TextBlock" BasedOn="{StaticResource {x:Type TextBlock}}">
+                <Setter Property="Margin" Value="2,7,2,0"></Setter>
+            </Style>
+        </Style.Resources>
+    </Style>
+</ResourceDictionary>

@@ -11,13 +11,7 @@
              xmlns:common="clr-namespace:FirstFloor.ModernUI.App.Common"
              mc:Ignorable="d"  designTime:DesignTime.Background="White"
              d:DesignHeight="600" d:DesignWidth="500" d:DataContext="{d:DesignInstance pages:BatchViewModel}">
-    <infrastructure:UserControlBase.Resources>
-        <Style BasedOn="{StaticResource {x:Type TextBlock}}"
-               TargetType="{x:Type TextBlock}">
-            <Setter Property="Margin" Value="2,5,2,2"></Setter>
-        </Style>
-    </infrastructure:UserControlBase.Resources>
-    <Grid>
+    <Grid Style="{StaticResource TextBoxAsLabelsContainer}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="10"/>
@@ -83,8 +77,8 @@
         <DatePicker Grid.Column="0" Grid.Row="8"
                  SelectedDate="{Binding Entity.StartDate}"></DatePicker>
 
-        <TextBlock Grid.Column="2" Grid.Row="7" Text="تاريخ النهاية"  ></TextBlock>
-        <DatePicker Grid.Column="2" Grid.Row="8"
+        <TextBlock Grid.Column="2" Grid.Row="7" Text="تاريخ النهاية"  ToolTip="عند تحديد عدد المحاضرات و زمن كل حاضرة وايام المحاضرات من المجدول يمكنني تحديد تاريخ النهاية"></TextBlock>
+        <DatePicker Grid.Column="2" Grid.Row="8" IsEnabled="False"
                  SelectedDate="{Binding Entity.EndDate}"></DatePicker>
 
         <TextBlock Grid.Column="0" Grid.Row="9" Text="ضيافة الافراد"  ></TextBlock>
