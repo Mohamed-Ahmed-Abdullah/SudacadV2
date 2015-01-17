@@ -50,6 +50,7 @@
     <Compile Include="DataContext\DbInitializer.cs" />
     <Compile Include="DataContext\PublicDatabaseContext.cs" />
     <Compile Include="DbEntities\Attachment.cs" />
+    <Compile Include="DbEntities\Base\Discount.cs" />
     <Compile Include="DbEntities\Base\EntityBase.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -59,6 +60,8 @@
     <Compile Include="DbEntities\Batch.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="DbEntities\BatchOrganization.cs" />
+    <Compile Include="DbEntities\BatchTrainee.cs" />
     <Compile Include="DbEntities\Course.cs" />
     <Compile Include="DbEntities\CourseType.cs" />
     <Compile Include="DbEntities\Division.cs" />
@@ -77,6 +80,7 @@
     <Compile Include="DbEntities\Teacher.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="DbEntities\TeacherCource.cs" />
     <Compile Include="DbEntities\Trainee.cs">
       <SubType>Code</SubType>
     </Compile>

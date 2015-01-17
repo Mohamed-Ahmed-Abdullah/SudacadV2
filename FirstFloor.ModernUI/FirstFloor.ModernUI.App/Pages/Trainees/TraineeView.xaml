@@ -1,4 +1,4 @@
-﻿<infrastructure:UserControlBase x:Class="FirstFloor.ModernUI.App.Pages.TraineeView"
+﻿<infrastructure:UserControlBase x:Class="FirstFloor.ModernUI.App.Pages.Trainees.TraineeView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -9,9 +9,10 @@
              xmlns:pages="clr-namespace:FirstFloor.ModernUI.App.Pages"
              xmlns:textBoxWaterMark="clr-namespace:FirstFloor.ModernUI.App.Common.Controls.TextBoxWaterMark"
              xmlns:titleTextBlock="clr-namespace:FirstFloor.ModernUI.App.Common.Controls.TitleTextBlock"
+             xmlns:trainees="clr-namespace:FirstFloor.ModernUI.App.Pages.Trainees"
              mc:Ignorable="d" 
              d:DesignHeight="399.324" d:DesignWidth="603.384"
-                                d:DataContext="{d:DesignInstance pages:TraineeViewModel}">
+                                d:DataContext="{d:DesignInstance trainees:TraineeViewModel}">
     <infrastructure:UserControlBase.Resources>
         <Style BasedOn="{StaticResource {x:Type TextBlock}}"
                TargetType="{x:Type TextBlock}">

@@ -55,6 +55,12 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Controls.Input.Toolkit">
+      <HintPath>..\Binaries\System.Windows.Controls.Input.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Layout.Toolkit">
+      <HintPath>..\Binaries\System.Windows.Controls.Layout.Toolkit.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -66,6 +72,9 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WPFToolkit">
+      <HintPath>..\Binaries\WPFToolkit.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -77,6 +86,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="BingImage.cs" />
+    <Compile Include="Common\Controls\TagControl\Tag.cs" />
+    <Compile Include="Common\Controls\TagControl\TagControl.cs" />
+    <Compile Include="Common\Controls\TagControl\TagItem.cs" />
     <Compile Include="Common\Controls\TextBoxWaterMark\TextBoxWaterMark.xaml.cs">
       <DependentUpon>TextBoxWaterMark.xaml</DependentUpon>
     </Compile>
@@ -99,27 +111,27 @@
     <Compile Include="Infrastructure\DesignTime\DesignTime.cs" />
     <Compile Include="Infrastructure\UserControlBase.cs" />
     <Compile Include="Infrastructure\ViewModelBase.cs" />
-    <Compile Include="Pages\BatchsSearchView.xaml.cs">
+    <Compile Include="Pages\Batchs\BatchsSearchView.xaml.cs">
       <DependentUpon>BatchsSearchView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\BatchView.xaml.cs">
+    <Compile Include="Pages\Batchs\BatchView.xaml.cs">
       <DependentUpon>BatchView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\TeachersSearchView.xaml.cs">
+    <Compile Include="Pages\Teachers\TeachersSearchView.xaml.cs">
       <DependentUpon>TeachersSearchView.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Pages\TeacherView.xaml.cs">
+    <Compile Include="Pages\Teachers\TeacherView.xaml.cs">
       <DependentUpon>TeacherView.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Pages\TraineesSearchView.xaml.cs">
+    <Compile Include="Pages\Trainees\TraineesSearchView.xaml.cs">
       <DependentUpon>TraineesSearchView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\TraineeView.xaml.cs">
+    <Compile Include="Pages\Trainees\TraineeView.xaml.cs">
       <DependentUpon>TraineeView.xaml</DependentUpon>
     </Compile>
     <Compile Include="ParametersDtos\IntegerId.cs" />
@@ -259,6 +271,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Common\Controls\TagControl\TagControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Common\Controls\TextBoxWaterMark\TextBoxWaterMark.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -279,11 +295,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\BatchsSearchView.xaml">
+    <Page Include="Pages\Batchs\BatchsSearchView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\BatchView.xaml">
+    <Page Include="Pages\Batchs\BatchView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -295,19 +311,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\TeachersSearchView.xaml">
+    <Page Include="Pages\Teachers\TeachersSearchView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\TeacherView.xaml">
+    <Page Include="Pages\Teachers\TeacherView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\TraineesSearchView.xaml">
+    <Page Include="Pages\Trainees\TraineesSearchView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\TraineeView.xaml">
+    <Page Include="Pages\Trainees\TraineeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

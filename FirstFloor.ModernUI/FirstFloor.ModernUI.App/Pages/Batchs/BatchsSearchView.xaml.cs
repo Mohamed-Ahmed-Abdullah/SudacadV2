@@ -1,22 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using DataAccess.DbEntities;
 using FirstFloor.ModernUI.App.Infrastructure;
+using FirstFloor.ModernUI.App.Pages.Trainees;
 using FirstFloor.ModernUI.App.ParametersDtos;
 
-namespace FirstFloor.ModernUI.App.Pages
+namespace FirstFloor.ModernUI.App.Pages.Batchs
 {
     public partial class BatchsSearchView
     {
@@ -72,8 +63,8 @@ namespace FirstFloor.ModernUI.App.Pages
 
         public BatchsSearchViewModel()
         {
-            Open = new DelegateCommand<Trainee>( (trainee) =>
-                Navigate("/Pages/BatchView.xaml", new IntegerId() { Id = trainee.TraineeId }));
+            Open = new DelegateCommand<Trainee>( trainee =>
+                Navigate("/Pages/BatchView.xaml", new IntegerId { Id = trainee.TraineeId }));
 
             New = new DelegateCommand(() => Navigate("/Pages/BatchView.xaml"));
 

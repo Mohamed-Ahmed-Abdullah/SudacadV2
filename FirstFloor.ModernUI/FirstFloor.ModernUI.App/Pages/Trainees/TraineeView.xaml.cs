@@ -5,7 +5,7 @@ using DataAccess.DbEntities;
 using FirstFloor.ModernUI.App.Infrastructure;
 using FirstFloor.ModernUI.App.ParametersDtos;
 
-namespace FirstFloor.ModernUI.App.Pages
+namespace FirstFloor.ModernUI.App.Pages.Trainees
 {
     public partial class TraineeView
     {

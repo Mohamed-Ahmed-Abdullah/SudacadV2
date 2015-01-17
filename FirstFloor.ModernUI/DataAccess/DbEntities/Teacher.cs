@@ -29,10 +29,10 @@ namespace DataAccess.DbEntities
         [Required]
         public virtual Identity Identity { get; set; }
 
-        public virtual List<Course> Courses { get; set; }
-
         public virtual List<Attachment> Attachments { get; set; }
 
-        //TODO: i need to put the money that he take for each course per hour
+        //each cource and his price for that cource, 
+            //you should see the cource price when you start entering this
+        public virtual List<TeacherCource> Cources { get; set; }
     }
 }

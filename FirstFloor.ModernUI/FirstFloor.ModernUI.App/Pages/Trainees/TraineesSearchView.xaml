@@ -1,16 +1,18 @@
-﻿<infrastructure:UserControlBase x:Class="FirstFloor.ModernUI.App.Pages.TeachersSearchView"
+﻿<infrastructure:UserControlBase x:Class="FirstFloor.ModernUI.App.Pages.Trainees.TraineesSearchView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:infrastructure="clr-namespace:FirstFloor.ModernUI.App.Infrastructure"
-             xmlns:converters="clr-namespace:FirstFloor.ModernUI.App.Common.Converters"
+             xmlns:pages="clr-namespace:FirstFloor.ModernUI.App.Pages"
              xmlns:attachedProperties="clr-namespace:FirstFloor.ModernUI.App.Infrastructure.AttachedProperties"
              xmlns:common="clr-namespace:FirstFloor.ModernUI.App.Common"
-             xmlns:pages="clr-namespace:FirstFloor.ModernUI.App.Pages"
+             xmlns:converters="clr-namespace:FirstFloor.ModernUI.App.Common.Converters"
+             xmlns:trainees="clr-namespace:FirstFloor.ModernUI.App.Pages.Trainees"
              mc:Ignorable="d" 
-             d:DesignHeight="600" d:DesignWidth="500" d:DataContext="{d:DesignInstance pages:TeachersSearchViewModel}">
-    
+             d:DesignHeight="600" 
+                                d:DesignWidth="500" 
+                                d:DataContext="{d:DesignInstance trainees:TraineesSearchViewModel}">
     <infrastructure:UserControlBase.Resources>
         <Style BasedOn="{StaticResource {x:Type TextBlock}}"
                TargetType="{x:Type TextBlock}">
@@ -21,7 +23,7 @@
             <Setter Property="AutoGenerateColumns" Value="False"></Setter>
             <Setter Property="IsReadOnly" Value="True"></Setter>
         </Style>
-        <converters:FullNameConverter x:Key="FullNameConverter"></converters:FullNameConverter>
+        <converters:FullNameConverter x:Key="FullNameConverter"/>
     </infrastructure:UserControlBase.Resources>
 
     <Grid>
@@ -31,13 +33,13 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-
+        
         <StackPanel Orientation="Horizontal">
-            <Button Content="استاذ جديد" 
-                    Command="{Binding NewTeacher}"
+            <Button Content="متدرب جديد" 
+                    Command="{Binding NewTrainee}"
                     Margin="0,0,10,0" ></Button>
         </StackPanel>
-
+        
         <Grid Grid.Column="0" Grid.Row="1" Margin="0,8" Width="250" HorizontalAlignment="Left">
             <TextBox Padding="0,0,10,0" VerticalAlignment="Center"
                      Height="22"
@@ -46,7 +48,7 @@
                    Width="16" Height="16" Margin="4" 
                    HorizontalAlignment="Right" VerticalAlignment="Center"></Image>
         </Grid>
-
+        
         <Expander Grid.Column="0" Grid.Row="2" Header="شروط البحث" Background="Transparent" >
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -63,34 +65,21 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <TextBlock Grid.Column="0" Grid.Row="0" Foreground="{DynamicResource ButtonText}"
                            Text="الاسم العربي يحتوي على"></TextBlock>
                 <TextBox Grid.Column="0" Grid.Row="1"
                          Text="{Binding ArabicNameContains,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"></TextBox>
-
+                
                 <TextBlock Grid.Column="2" Grid.Row="0" Foreground="{DynamicResource ButtonText}"
                            Text="الاسم الانجليزي يحتوي على"></TextBlock>
                 <TextBox Grid.Column="2" Grid.Row="1"
                          Text="{Binding EnglishNameContains,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"></TextBox>
 
-                <TextBlock Grid.Column="0" Grid.Row="4" Foreground="{DynamicResource ButtonText}"
-                           Text="رقم التلفون يحتوي على"></TextBlock>
-                <TextBox Grid.Column="0" Grid.Row="5"
-                         Text="{Binding TelephoneNumberContains,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"></TextBox>
-
-                <TextBlock Grid.Column="2" Grid.Row="4" Foreground="{DynamicResource ButtonText}"
-                           Text="الايميل يحتوي على"></TextBlock>
-                <TextBox Grid.Column="2" Grid.Row="5" 
-                         Text="{Binding EmailContains,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"></TextBox>
-                
-                <TextBlock Grid.Column="0" Grid.Row="6" Foreground="{DynamicResource ButtonText}"
+                <TextBlock Grid.Column="0" Grid.Row="2" Foreground="{DynamicResource ButtonText}"
                            Text="الهوية"></TextBlock>
-                <Grid Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="1">
+                <Grid Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="1">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
@@ -114,12 +103,53 @@
                              Text="{Binding IdentityNumber,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"></TextBox>
                 </Grid>
 
-                <TextBlock Grid.Column="2" Grid.Row="6" Foreground="{DynamicResource ButtonText}"
-                           Text="الملاحظات تحتوي على"></TextBlock>
-                <TextBox Grid.Column="2" Grid.Row="7"
-                         Text="{Binding NotesContains,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"></TextBox>
+                <TextBlock Grid.Column="2" Grid.Row="2" Foreground="{DynamicResource ButtonText}"
+                           Text="الوظيفة"></TextBlock>
+                <ComboBox attachedProperties:LookupTypeAttached.LookupType="{x:Static common:LookupTypes.Jobs}" 
+                  IsEditable="True" TabIndex="10"
+                  SelectedItem="{Binding Job,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
+                  Grid.Column="2" Grid.Row="3" ></ComboBox>
 
-                <StackPanel Grid.Column="0" Grid.Row="10" Grid.ColumnSpan="3"
+                <TextBlock Grid.Column="0" Grid.Row="4" Foreground="{DynamicResource ButtonText}"
+                           Text="رقم التلفون يحتوي على"></TextBlock>
+                <TextBox Grid.Column="0" Grid.Row="5"
+                         Text="{Binding TelephoneNumberContains,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"></TextBox>
+                
+                <TextBlock Grid.Column="2" Grid.Row="4" Foreground="{DynamicResource ButtonText}"
+                           Text="الايميل يحتوي على"></TextBlock>
+                <TextBox Grid.Column="2" Grid.Row="5"
+                         Text="{Binding EmailContains,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"></TextBox>
+                
+                <TextBlock Grid.Column="0" Grid.Row="6" Foreground="{DynamicResource ButtonText}"
+                           Text="الملاحظات تحتوي على"></TextBlock>
+                <TextBox Grid.Column="0" Grid.Row="7"
+                         Text="{Binding NotesContains,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"></TextBox>
+                
+                <TextBlock Grid.Column="2" Grid.Row="6" Foreground="{DynamicResource ButtonText}"
+                           Text="من هو"></TextBlock>
+                <StackPanel  Grid.Column="2" Grid.Row="7" Grid.ColumnSpan="3" Margin="0,10,0,0"
+                     Orientation="Horizontal" >
+
+                    <RadioButton x:Name="Alone" Margin="0,0,20,0"
+                         GroupName="TraineeType" 
+                         IsChecked="{Binding Alone,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" 
+                         Foreground="{DynamicResource Accent}"
+                         Content="فرد"/>
+
+                    <RadioButton x:Name="Sudatel" Margin="0,0,20,0"
+                         GroupName="TraineeType" 
+                         IsChecked="{Binding WithSudatel,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
+                         Foreground="{DynamicResource Accent}"
+                         Content="من سوداتل"/>
+
+                    <RadioButton x:Name="AnotherCompany" Margin="0,0,20,0"
+                         GroupName="TraineeType" 
+                         IsChecked="{Binding WithOrganization,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
+                         Foreground="{DynamicResource Accent}"
+                         Content="من شركة اخرى"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="3"
                             Margin="0,8"
                             Orientation="Horizontal" >
                     <Button Content="ابحث" Command="{Binding Search}" Padding="20,1" Margin="4,0"
@@ -129,12 +159,11 @@
                 </StackPanel>
             </Grid>
         </Expander>
-
+        
         <DataGrid Name="DataGrid" Grid.Column="0" Grid.Row="3" MouseDoubleClick="DataGrid_OnMouseDoubleClick"
                   ItemsSource="{Binding ResultSet,UpdateSourceTrigger=PropertyChanged}">
             <DataGrid.Columns>
-                
-                <DataGridTextColumn Header="الاسم " >
+                <DataGridTextColumn Header="الاسم بالعربية" >
                     <DataGridTextColumn.Binding>
                         <MultiBinding Converter="{StaticResource FullNameConverter}">
                             <Binding Path="ArabicFirstName"></Binding>
@@ -144,8 +173,7 @@
                         </MultiBinding>
                     </DataGridTextColumn.Binding>
                 </DataGridTextColumn>
-                
-                <DataGridTextColumn Visibility="Collapsed" Header="الاسم بالانجليزية" >
+                <DataGridTextColumn Header="الاسم بالانجليزية">
                     <DataGridTextColumn.Binding>
                         <MultiBinding Converter="{StaticResource FullNameConverter}">
                             <Binding Path="EnglishFirstName"></Binding>
@@ -155,11 +183,28 @@
                         </MultiBinding>
                     </DataGridTextColumn.Binding>
                 </DataGridTextColumn>
-                
+                <DataGridTextColumn Header="من هو" Binding="{Binding TraineeType.ArabicName}"></DataGridTextColumn>
                 <DataGridTextColumn Header="الهوية" Binding="{Binding Identity}"></DataGridTextColumn>
+                <DataGridTextColumn Header="الوظيفة" Binding="{Binding Job.ArabicName}"></DataGridTextColumn>
                 <DataGridTextColumn Header="رقم التلفون" Binding="{Binding PhoneNumber}"></DataGridTextColumn>
                 <DataGridTextColumn Header="الايميل" Binding="{Binding EmailAddress}"></DataGridTextColumn>
                 <DataGridTextColumn Header="ملاحظات" Binding="{Binding Notes}"></DataGridTextColumn>
+
+                <DataGridTextColumn Header="القطاع" Binding="{Binding Sudatel.Division.ArabicName}"
+                                    Visibility="Collapsed"></DataGridTextColumn>
+                <DataGridTextColumn Header="القسم" Binding="{Binding Sudatel.Department}"
+                                    Visibility="Collapsed"></DataGridTextColumn>
+                <DataGridTextColumn Header="رقم الملف" Binding="{Binding Sudatel.SudatelEmployeeId}"
+                                    Visibility="Collapsed"></DataGridTextColumn>
+
+                <DataGridTextColumn Header="نوع المؤوسسة" Binding="{Binding TraineeOrganizations.OrganizationType.ArabicName}"
+                                    Visibility="Collapsed"></DataGridTextColumn>
+                <DataGridTextColumn Header="اسم المؤوسسة" Binding="{Binding TraineeOrganizations.Organization.ArabicName}"
+                                    Visibility="Collapsed"></DataGridTextColumn>
+                <DataGridTextColumn Header="المندوب" Binding="{Binding TraineeOrganizations.CoordinatorName}"
+                                    Visibility="Collapsed"></DataGridTextColumn>
+                <DataGridTextColumn Header="الايميل" Binding="{Binding TraineeOrganizations.Email}"
+                                    Visibility="Collapsed"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

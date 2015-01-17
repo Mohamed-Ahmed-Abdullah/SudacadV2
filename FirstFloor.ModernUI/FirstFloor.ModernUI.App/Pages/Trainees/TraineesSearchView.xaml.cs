@@ -5,7 +5,7 @@ using DataAccess.DbEntities;
 using FirstFloor.ModernUI.App.Infrastructure;
 using FirstFloor.ModernUI.App.ParametersDtos;
 
-namespace FirstFloor.ModernUI.App.Pages
+namespace FirstFloor.ModernUI.App.Pages.Trainees
 {
     public partial class TraineesSearchView
     {
@@ -56,8 +56,8 @@ namespace FirstFloor.ModernUI.App.Pages
 
         public TraineesSearchViewModel()
         {
-            OpenTrainee = new DelegateCommand<Trainee>( (trainee) => 
-                Navigate("/Pages/TraineeView.xaml", new IntegerId() {Id = trainee.TraineeId}));
+            OpenTrainee = new DelegateCommand<Trainee>( trainee => 
+                Navigate("/Pages/TraineeView.xaml", new IntegerId {Id = trainee.TraineeId}));
 
             NewTrainee = new DelegateCommand(() => Navigate("/Pages/TraineeView.xaml"));
 

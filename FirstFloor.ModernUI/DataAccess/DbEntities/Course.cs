@@ -24,8 +24,8 @@ namespace DataAccess.DbEntities
         public decimal IndividualsPrice { get; set; }
         public decimal OrganizationsPrice { get; set; }
 
-        public TimeSpan LectureHours { get; set; }
-        public TimeSpan LabHours { get; set; }
+        public decimal LectureHours { get; set; }
+        public decimal LabHours { get; set; }
 
         [StringLength(1000)]
         public string Notes { get; set; }

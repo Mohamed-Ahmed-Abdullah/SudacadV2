@@ -29,9 +29,15 @@ namespace DataAccess.DataContext
         public DbSet<TraineeType> TraineeTypes { get; set; }
         public DbSet<Course> Courses { get; set; }
         public DbSet<Teacher> Teachers { get; set; }
+        public DbSet<TeacherCource> TeacherCources { get; set; }
         public DbSet<Attachment> Attachments { get; set; }
         public DbSet<Room> Rooms { get; set; }
         public DbSet<Reservation> Reservations { get; set; }
         public DbSet<Batch> Batchs { get; set; }
+        public DbSet<BatchOrganization> BatchOrganizations { get; set; }
+        public DbSet<BatchTrainee> BatchTrainees { get; set; }
+
+        //Accounting tables
+
     }
 }

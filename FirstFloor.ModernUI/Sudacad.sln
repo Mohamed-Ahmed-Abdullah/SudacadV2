@@ -8,6 +8,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Binaries", "Binaries", "{E3D8DFD4-4299-4FE0-9BE8-0CB41F189489}"
 	ProjectSection(SolutionItems) = preProject
 		Binaries\Microsoft.Windows.Shell.dll = Binaries\Microsoft.Windows.Shell.dll
+		Binaries\System.Windows.Controls.Input.Toolkit.dll = Binaries\System.Windows.Controls.Input.Toolkit.dll
+		Binaries\System.Windows.Controls.Layout.Toolkit.dll = Binaries\System.Windows.Controls.Layout.Toolkit.dll
+		Binaries\WPFToolkit.dll = Binaries\WPFToolkit.dll
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstFloor.ModernUI.App", "FirstFloor.ModernUI.App\FirstFloor.ModernUI.App.csproj", "{BA5911EB-F34B-4F8D-AB29-6B967ED0B8DC}"

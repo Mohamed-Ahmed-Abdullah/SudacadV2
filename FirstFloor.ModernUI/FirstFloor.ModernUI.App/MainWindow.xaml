@@ -4,7 +4,7 @@
                   xmlns:mui="http://firstfloorsoftware.com/ModernUI"
                   Title="" IsTitleVisible="False" 
                   WindowState="Maximized"
-                  ContentSource="/Pages/BatchsSearchView.xaml"
+                  ContentSource="/Pages/BatchView.xaml"
                   FontFamily="/ModernUIDemo;component/Fonts/#BabylonFont"
                   Width="800" Height="700">
     <mui:ModernWindow.TitleLinks>
@@ -14,7 +14,7 @@
     <mui:ModernWindow.MenuLinkGroups>
         <mui:LinkGroup DisplayName="المتدربين">
             <mui:LinkGroup.Links>
-                <mui:Link DisplayName="المتدربين" Source="/Pages/TraineesSearchView.xaml" />
+                <mui:Link DisplayName="المتدربين" Source="/Pages/Teacher/TraineesSearchView.xaml" />
                 <mui:Link DisplayName="كشف حساب" Source="/Pages/Introduction.xaml" />
                 <mui:Link DisplayName="تقارير" Source="/Pages/Introduction.xaml" />
             </mui:LinkGroup.Links>
