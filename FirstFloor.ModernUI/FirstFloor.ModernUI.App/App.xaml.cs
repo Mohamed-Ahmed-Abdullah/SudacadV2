@@ -1,4 +1,5 @@
-﻿using FirstFloor.ModernUI.Presentation;
+﻿using System.Diagnostics;
+using FirstFloor.ModernUI.Presentation;
 using FirstFloor.ModernUI.Windows.Controls;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,13 @@ namespace FirstFloor.ModernUI.App
     {
         public App()
         {
+            DispatcherUnhandledException += App_DispatcherUnhandledException;
+            
+        }
+
+        void App_DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
+        {
+            Debug.WriteLine(e);
         }
 
         protected override void OnStartup(StartupEventArgs e)

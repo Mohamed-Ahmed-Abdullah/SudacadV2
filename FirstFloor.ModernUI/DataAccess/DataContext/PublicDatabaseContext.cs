@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace DataAccess.DataContext
 {
-    public static class PublicDatabaseContext
-    {
-        public static DatabaseContext PublicContext { get; set; }
+    //public static class PublicDatabaseContext
+    //{
+    //    public static DatabaseContext PublicContext { get; set; }
 
-        static PublicDatabaseContext()
-        {
-            //TODO: Ioc should applyed here 
-            PublicContext = new DatabaseContext();
-        }
-    }
+    //    static PublicDatabaseContext()
+    //    {
+    //        //TODO: Ioc should applyed here 
+    //        PublicContext = new DatabaseContext();
+    //    }
+    //}
 }

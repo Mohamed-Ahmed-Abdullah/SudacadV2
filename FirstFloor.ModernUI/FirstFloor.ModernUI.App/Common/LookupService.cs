@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using DataAccess.DataContext;
+using FirstFloor.ModernUI.App.Infrastructure;
 using FirstFloor.ModernUI.App.Infrastructure.AttachedProperties;
 
 namespace FirstFloor.ModernUI.App.Common
@@ -33,28 +34,28 @@ namespace FirstFloor.ModernUI.App.Common
                 {
                     comboBox.DisplayMemberPath = "ArabicName";
                     comboBox.SelectedValuePath = "Id";
-                    comboBox.ItemsSource =  PublicDatabaseContext.PublicContext.Jobs.ToList();
+                    comboBox.ItemsSource = ViewModelBase.Database.Jobs.ToList();
                 }
                     break;
                 case LookupTypes.Nationalities:
                 {
                     comboBox.DisplayMemberPath = "ArabicName";
                     comboBox.SelectedValuePath = "Id";
-                    comboBox.ItemsSource = PublicDatabaseContext.PublicContext.Nationalities.ToList();
+                    comboBox.ItemsSource = ViewModelBase.Database.Nationalities.ToList();
                 }
                     break;
                 case LookupTypes.IdentityType:
                 {
                     comboBox.DisplayMemberPath = "ArabicName";
                     comboBox.SelectedValuePath = "Id";
-                    comboBox.ItemsSource = PublicDatabaseContext.PublicContext.IdentityTypes.ToList();
+                    comboBox.ItemsSource = ViewModelBase.Database.IdentityTypes.ToList();
                 }
                     break;
                 case LookupTypes.Division:
                 {
                     comboBox.DisplayMemberPath = "ArabicName";
                     comboBox.SelectedValuePath = "Id";
-                    comboBox.ItemsSource = PublicDatabaseContext.PublicContext.Divisions.ToList();
+                    comboBox.ItemsSource = ViewModelBase.Database.Divisions.ToList();
                 }
                     break;
 
@@ -62,28 +63,28 @@ namespace FirstFloor.ModernUI.App.Common
                 {
                     comboBox.DisplayMemberPath = "ArabicName";
                     comboBox.SelectedValuePath = "Id";
-                    comboBox.ItemsSource = PublicDatabaseContext.PublicContext.OrganizationTypes.ToList();
+                    comboBox.ItemsSource = ViewModelBase.Database.OrganizationTypes.ToList();
                 }
                     break;
                 case LookupTypes.Organization:
                 {
                     comboBox.DisplayMemberPath = "ArabicName";
                     comboBox.SelectedValuePath = "Id";
-                    comboBox.ItemsSource = PublicDatabaseContext.PublicContext.Organizations.ToList();
+                    comboBox.ItemsSource = ViewModelBase.Database.Organizations.ToList();
                 }
                     break;
                 case LookupTypes.Cources:
                 {
                     comboBox.DisplayMemberPath = "ArabicName";
                     comboBox.SelectedValuePath = "CourseId";
-                    comboBox.ItemsSource = PublicDatabaseContext.PublicContext.Courses.ToList();
+                    comboBox.ItemsSource = ViewModelBase.Database.Courses.ToList();
                 }
                     break;
                 case LookupTypes.Rooms:
                 {
                     comboBox.DisplayMemberPath = "ArabicName";
                     comboBox.SelectedValuePath = "Id";
-                    comboBox.ItemsSource = PublicDatabaseContext.PublicContext.Rooms.ToList();
+                    comboBox.ItemsSource = ViewModelBase.Database.Rooms.ToList();
                 }
                     break;
             }

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using DataAccess.DbEntities.Base;
 using System;
@@ -13,6 +14,7 @@ namespace DataAccess.DbEntities
 {
     public class Teacher : Names
     {
+
         [Key]
         public int TeacherId { get; set; }
 
@@ -32,7 +34,13 @@ namespace DataAccess.DbEntities
         public virtual List<Attachment> Attachments { get; set; }
 
         //each cource and his price for that cource, 
-            //you should see the cource price when you start entering this
-        public virtual List<TeacherCource> Cources { get; set; }
+        //you should see the cource price when you start entering this
+      
+        private ObservableCollection<TeacherCource> _cources;
+        public virtual ObservableCollection<TeacherCource> Cources
+        {
+            get { return _cources; }
+            set { _cources = value; NotifyPropertyChanged(); }
+        }
     }
 }

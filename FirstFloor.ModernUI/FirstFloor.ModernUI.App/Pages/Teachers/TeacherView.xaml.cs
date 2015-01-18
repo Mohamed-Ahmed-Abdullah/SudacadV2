@@ -28,14 +28,13 @@ namespace FirstFloor.ModernUI.App.Pages.Teachers
 
         public ICommand Save { get; set; }
         public ICommand AddTeacherCources { get; set; }
+        public ICommand UpdateTeacherCources { get; set; }
 
         public TeacherViewModel()
         {
-            AddTeacherCources = new DelegateCommand(() =>
-            {
-                var result = ShowDialog(new AddTeacherCource());
-                Debug.WriteLine("");
-            });
+            AddTeacherCources = new DelegateCommand(() => SaveTeacherCources(null));
+
+            UpdateTeacherCources = new DelegateCommand<TeacherCource>(SaveTeacherCources);
 
             Load = new DelegateCommand(LoadMethod);
             Save = new DelegateCommand(() =>
@@ -47,12 +46,34 @@ namespace FirstFloor.ModernUI.App.Pages.Teachers
             });
         }
 
+        public void SaveTeacherCources(TeacherCource teacherCource)
+        {
+            var result = ShowDialog(new AddTeacherCource(teacherCource)) as TeacherCource;
+
+            if (result != null)
+            {
+                if(result.Id == 0)
+                    Entity.Cources.Add(result);
+
+                DatabaseContext.SaveChanges();
+            }
+            else
+            {
+                //uer press cancel in the dialog box
+            }
+        }
+
         private void LoadMethod()
         {
             var intId = GetParameter<IntegerId>();
+
+            //Bug: hardcoded id for testing 
+            intId = new IntegerId {Id = 1};
+
             if (intId != null && intId.Id.HasValue)
             {
-                var entity = DatabaseContext.Teachers.FirstOrDefault(f => f.TeacherId == intId.Id);
+                var entity = DatabaseContext.Teachers
+                    .Include("Cources").FirstOrDefault(f => f.TeacherId == intId.Id);
                 if (entity == null)
                     NewEntity();
                 else

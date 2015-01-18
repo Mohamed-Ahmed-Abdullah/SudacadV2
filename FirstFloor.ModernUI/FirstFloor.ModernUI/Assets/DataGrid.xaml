@@ -387,16 +387,16 @@
                                                 <TextBlock Text="#" VerticalAlignment="Center"></TextBlock>
 
                                                 <Grid>
-                                                    <Grid.RowDefinitions>
-                                                        <RowDefinition Height="Auto"></RowDefinition>
-                                                        <RowDefinition Height="*"></RowDefinition>
-                                                    </Grid.RowDefinitions>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
                                                     
                                                     <ToggleButton x:Name="ColumnsVisibilityToggleButton" Width="19" Height="19">
                                                         <Image Source="../Images/Settings.png" Width="16" Height="16"></Image>
                                                     </ToggleButton>
                                                     
-                                                    <ItemsControl Grid.Row="1"
+                                                    <ItemsControl Grid.Column="1"
                                                                   Visibility="{Binding ElementName=ColumnsVisibilityToggleButton,Path=IsChecked,Converter={StaticResource BooleanToVisibilityConverter}}"
                                                                   ItemsSource="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type DataGrid}},Path=Columns}">
                                                         <ItemsControl.ItemTemplate>

@@ -7,8 +7,9 @@
              xmlns:attachedProperties="clr-namespace:FirstFloor.ModernUI.App.Infrastructure.AttachedProperties"
              xmlns:common="clr-namespace:FirstFloor.ModernUI.App.Common"
              xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             xmlns:teachers="clr-namespace:FirstFloor.ModernUI.App.Pages.Teachers"
              mc:Ignorable="d" Width="300" Height="150"
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="300" d:DesignWidth="300" d:DataContext="{d:DesignInstance teachers:AddTeacherCourceViewModel}">
     <Grid Style="{StaticResource TextBoxAsLabelsContainer}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -21,17 +22,18 @@
         
         <TextBlock Text="الكورس"></TextBlock>
         <ComboBox attachedProperties:LookupTypeAttached.LookupType="{x:Static common:LookupTypes.Cources}" 
-                  SelectedValue="{Binding Entity.Job.Id,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
                   IsEditable="True" TabIndex="10"
-                  SelectedItem="{Binding Entity.Job,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
+                  SelectedItem="{Binding Course,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
                   Grid.Column="0" Grid.Row="1" ></ComboBox>
 
         <TextBlock Grid.Row="2" Text="سعر المدرب"></TextBlock>
-        <TextBox Grid.Row="3"></TextBox>
+        <TextBox Grid.Row="3" Text="{Binding Price,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"></TextBox>
         
         <StackPanel Orientation="Horizontal" Grid.Row="4" HorizontalAlignment="Right">
-            <mui:ModernButton Style="{StaticResource CancelButton}" Margin="5" Click="ButtonBase_OnClick"/>
-            <mui:ModernButton Style="{StaticResource SaveButton}" Margin="5" Click="Save_OnClick"/>
+            <mui:ModernButton Style="{StaticResource CancelButton}" Margin="5" 
+                              Click="Cancel_OnClick"/>
+            <mui:ModernButton Style="{StaticResource SaveButton}" Margin="5" 
+                              Click="Save_OnClick"/>
         </StackPanel>
     </Grid>
 </infrastructure:UserControlBase>

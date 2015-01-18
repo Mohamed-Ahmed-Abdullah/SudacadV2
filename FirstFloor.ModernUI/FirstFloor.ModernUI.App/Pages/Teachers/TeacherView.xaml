@@ -126,10 +126,10 @@
                 Margin="55,0,2,2" Background="Green"
                 ></mui:ModernButton>
         <DataGrid Grid.Column="0" Grid.Row="11" Grid.ColumnSpan="3"
-                  ItemsSource="{Binding }">
+                  ItemsSource="{Binding Entity.Cources,UpdateSourceTrigger=PropertyChanged,Mode=OneWay}">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="الكورس"></DataGridTextColumn>
-                <DataGridTextColumn Header="سعر المدرب"></DataGridTextColumn>
+                <DataGridTextColumn Header="الكورس" Binding="{Binding Course.ArabicName}"></DataGridTextColumn>
+                <DataGridTextColumn Header="سعر المدرب" Binding="{Binding Price}"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
         

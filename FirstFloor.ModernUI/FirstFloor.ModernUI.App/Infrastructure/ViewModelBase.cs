@@ -14,6 +14,14 @@ namespace FirstFloor.ModernUI.App.Infrastructure
 {
     public class ViewModelBase : INotifyPropertyChanged
     {
+        //TODO: This is super wrong you have to change it to Ioc, to see why i did this keep reading 
+        // if makes the development faster and the appication performance faster, for instance the lookups, 
+        //if you don't retreve them from the same DbContext Exception will be thrown
+        /// <summary>
+        /// one instance from the DbContext to the wholw application
+        /// </summary>
+        public static readonly DatabaseContext Database = new DatabaseContext();
+
         public DatabaseContext DatabaseContext { get; set; }
 
         /// <summary>
@@ -24,7 +32,7 @@ namespace FirstFloor.ModernUI.App.Infrastructure
         public ViewModelBase()
         {
             //TODO: this should be done by the Ioc and should be one instance created when the application start
-            DatabaseContext = new DatabaseContext();
+            DatabaseContext = Database;
         }
 
         public void Navigate(string to, object parameter = null)

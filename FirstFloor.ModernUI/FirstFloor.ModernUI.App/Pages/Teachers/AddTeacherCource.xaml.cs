@@ -1,21 +1,31 @@
 ﻿using System.Windows;
+using System.Windows.Input;
 using System.Windows.Media;
+using DataAccess.DbEntities;
 using FirstFloor.ModernUI.App.Infrastructure;
+using FirstFloor.ModernUI.App.ParametersDtos;
 using FirstFloor.ModernUI.Windows.Controls;
 
 namespace FirstFloor.ModernUI.App.Pages.Teachers
 {
     public partial class AddTeacherCource : IDialog
     {
-        public AddTeacherCource()
+        public AddTeacherCourceViewModel ViewModel {
+            get { return (AddTeacherCourceViewModel) DataContext; }
+        }
+
+        public AddTeacherCource(TeacherCource teacherCource)
         {
             InitializeComponent();
-            //DataContext = new AddTeacherCourceViewModel();
+            DataContext = new AddTeacherCourceViewModel();
+
+            if (teacherCource != null)
+                ViewModel.TeacherCoursePrice = teacherCource;
         }
 
         public object DialogResult
         {
-            get { return null; }
+            get { return ViewModel.TeacherCoursePrice; }
         }
 
         public string Title
@@ -28,7 +38,7 @@ namespace FirstFloor.ModernUI.App.Pages.Teachers
             FindUpVisualTree<ModernDialog>(this).Close();
         }
 
-        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        private void Cancel_OnClick(object sender, RoutedEventArgs e)
         {
             Close();
         }
@@ -45,15 +55,32 @@ namespace FirstFloor.ModernUI.App.Pages.Teachers
 
         private void Save_OnClick(object sender, RoutedEventArgs e)
         {
-            
+            //TODO: if you make execute parameter less it will be better
+            ViewModel.SelectIt.Execute(null);
+            Close();
         }
     }
 
-     //public class AddTeacherCourceViewModel : ViewModelBase
-    //{
-    //    public AddTeacherCourceViewModel()
-    //    {
+    public class AddTeacherCourceViewModel : ViewModelBase
+    {
+        public TeacherCource TeacherCoursePrice { get; set; }
 
-    //    }
-    //}
+        public Course Course { get; set; }
+        public decimal Price { get; set; }
+
+        public ICommand SelectIt { get; set; }
+
+        public AddTeacherCourceViewModel()
+        {
+            SelectIt = new DelegateCommand(() =>
+            {
+                TeacherCoursePrice = new TeacherCource
+                {
+                    Course = Course,
+                    Price = Price
+                };
+            });
+        }
+
+    }
 }

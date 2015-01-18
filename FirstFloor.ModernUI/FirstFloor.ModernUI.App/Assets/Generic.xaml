@@ -13,6 +13,7 @@
     </Style>
 
     <converters:FullNameConverter x:Key="FullNameConverter"/>
+    <converters:InverseStringToVisibilityConverter x:Key="InverseStringToVisibilityConverter"/>    
 
     <Style x:Key="TextBoxAsLabelsContainer" TargetType="Grid">
         <Style.Resources>
