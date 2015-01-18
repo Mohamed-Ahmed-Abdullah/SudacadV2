@@ -119,6 +119,39 @@
     <Compile Include="Pages\Batchs\BatchView.xaml.cs">
       <DependentUpon>BatchView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\CommingSoon\Accounts.xaml.cs">
+      <DependentUpon>Accounts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CommingSoon\BatchesReports.xaml.cs">
+      <DependentUpon>BatchesReports.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CommingSoon\BatchesStatements.xaml.cs">
+      <DependentUpon>BatchesStatements.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CommingSoon\CourcesReports.xaml.cs">
+      <DependentUpon>CourcesReports.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CommingSoon\FinancialReports.xaml.cs">
+      <DependentUpon>FinancialReports.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CommingSoon\Scheduler.xaml.cs">
+      <DependentUpon>Scheduler.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CommingSoon\TeachersReports.xaml.cs">
+      <DependentUpon>TeachersReports.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CommingSoon\TeachersStatements.xaml.cs">
+      <DependentUpon>TeachersStatements.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CommingSoon\TraineesReports.xaml.cs">
+      <DependentUpon>TraineesReports.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CommingSoon\TraineesStatements.xaml.cs">
+      <DependentUpon>TraineesStatements.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CommingSoon\TransactionsSearch.xaml.cs">
+      <DependentUpon>TransactionsSearch.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
     </Compile>
@@ -305,6 +338,50 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Batchs\BatchView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\CommingSoon\Accounts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\CommingSoon\BatchesReports.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\CommingSoon\BatchesStatements.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\CommingSoon\CourcesReports.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\CommingSoon\FinancialReports.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\CommingSoon\Scheduler.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\CommingSoon\TeachersReports.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\CommingSoon\TeachersStatements.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\CommingSoon\TraineesReports.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\CommingSoon\TraineesStatements.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\CommingSoon\TransactionsSearch.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

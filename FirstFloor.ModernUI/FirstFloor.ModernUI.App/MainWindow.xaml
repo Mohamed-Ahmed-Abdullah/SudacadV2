@@ -15,49 +15,45 @@
         <mui:LinkGroup DisplayName="المتدربين">
             <mui:LinkGroup.Links>
                 <mui:Link DisplayName="المتدربين" Source="/Pages/Trainees/TraineesSearchView.xaml" />
-                <mui:Link DisplayName="كشف حساب" Source="/Pages/Introduction.xaml" />
-                <mui:Link DisplayName="تقارير" Source="/Pages/Introduction.xaml" />
+                <mui:Link DisplayName="كشف حساب" Source="/Pages/CommingSoon/TraineesStatements.xaml" />
+                <mui:Link DisplayName="تقارير" Source="/Pages/CommingSoon/TraineesReports.xaml" />
             </mui:LinkGroup.Links>
         </mui:LinkGroup>
+        
         <mui:LinkGroup DisplayName="الدورات التدريبية">
             <mui:LinkGroup.Links>
                 <mui:Link DisplayName="الدورات التدريبية" Source="/Pages/Batchs/BatchsSearchView.xaml" />
-                <mui:Link DisplayName="كشف حساب" Source="/Pages/Introduction.xaml" />
-                <mui:Link DisplayName="تقارير" Source="/Pages/Introduction.xaml" />
+                <mui:Link DisplayName="كشف حساب" Source="/Pages/CommingSoon/BatchesStatements.xaml" />
+                <mui:Link DisplayName="تقارير" Source="/Pages/CommingSoon/BatchesReports.xaml" />
             </mui:LinkGroup.Links>
         </mui:LinkGroup>
+        
         <mui:LinkGroup DisplayName="الاساتذة">
             <mui:LinkGroup.Links>
                 <mui:Link DisplayName="الاساتذة" Source="/Pages/Teachers/TeachersSearchView.xaml" />
-                <mui:Link DisplayName="كشف حساب" Source="/Pages/Introduction.xaml" />
-                <mui:Link DisplayName="تقارير" Source="/Pages/Introduction.xaml" />
+                <mui:Link DisplayName="كشف حساب" Source="/Pages/CommingSoon/TeachersStatements.xaml" />
+                <mui:Link DisplayName="تقارير" Source="/Pages/CommingSoon/TeachersReports.xaml" />
             </mui:LinkGroup.Links>
         </mui:LinkGroup>
+        
         <mui:LinkGroup DisplayName="الكورسات">
             <mui:LinkGroup.Links>
                 <mui:Link DisplayName="الكورسات" Source="/Pages/Introduction.xaml" />
-                <mui:Link DisplayName="تقارير" Source="/Pages/Introduction.xaml" />
-            </mui:LinkGroup.Links>
-        </mui:LinkGroup>
-        <mui:LinkGroup DisplayName="القاعات" GroupKey="settings">
-            <mui:LinkGroup.Links>
-                <mui:Link DisplayName="القاعات" Source="/Pages/Settings.xaml" />
-                <mui:Link DisplayName="تقارير" Source="/Pages/Introduction.xaml" />
+                <mui:Link DisplayName="تقارير" Source="/Pages/CommingSoon/CourcesReports.xaml" />
             </mui:LinkGroup.Links>
         </mui:LinkGroup>
         
-        <mui:LinkGroup DisplayName="تقارير" GroupKey="settings">
+        <mui:LinkGroup DisplayName="القاعات">
             <mui:LinkGroup.Links>
-                <mui:Link DisplayName="تقارير عامة" Source="/Pages/Settings.xaml" />
-                <mui:Link DisplayName="تقارير المتدربين" Source="/Pages/Settings.xaml" />
+                <mui:Link DisplayName="القاعات" Source="/Pages/CommingSoon/Scheduler.xaml" />                
             </mui:LinkGroup.Links>
-        </mui:LinkGroup>
+        </mui:LinkGroup>              
         
-        <mui:LinkGroup DisplayName="المالية" GroupKey="settings">
+        <mui:LinkGroup DisplayName="المالية">
             <mui:LinkGroup.Links>
-                <mui:Link DisplayName="الحسابات" Source="/Pages/Settings.xaml" />
-                <mui:Link DisplayName="القيود المالية" Source="/Pages/Settings.xaml" />
-                <mui:Link DisplayName="تقارير" Source="/Pages/Settings.xaml" />
+                <mui:Link DisplayName="الحسابات" Source="/Pages/CommingSoon/Accounts.xaml" />
+                <mui:Link DisplayName="القيود المالية" Source="/Pages/CommingSoon/TransactionsSearch.xaml" />
+                <mui:Link DisplayName="تقارير" Source="/Pages/CommingSoon/FinancialReports.xaml" />
             </mui:LinkGroup.Links>
         </mui:LinkGroup>
     </mui:ModernWindow.MenuLinkGroups>
