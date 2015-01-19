@@ -29,10 +29,17 @@ namespace FirstFloor.ModernUI.App.Pages.Teachers
         public ICommand Save { get; set; }
         public ICommand AddTeacherCources { get; set; }
         public ICommand UpdateTeacherCources { get; set; }
+        public ICommand Delete { get; set; }
 
         public TeacherViewModel()
         {
             AddTeacherCources = new DelegateCommand(() => SaveTeacherCources(null));
+            Delete = new DelegateCommand(() =>
+            {
+                //TODO: delete rules
+                //DatabaseContext.Teachers.Remove(Entity);
+                //DatabaseContext.SaveChanges();
+            });
 
             UpdateTeacherCources = new DelegateCommand<TeacherCource>(SaveTeacherCources);
 
@@ -67,8 +74,8 @@ namespace FirstFloor.ModernUI.App.Pages.Teachers
         {
             var intId = GetParameter<IntegerId>();
 
-            //Bug: hardcoded id for testing 
-            intId = new IntegerId {Id = 1};
+            ////Bug: hardcoded id for testing 
+            //intId = new IntegerId {Id = 1};
 
             if (intId != null && intId.Id.HasValue)
             {

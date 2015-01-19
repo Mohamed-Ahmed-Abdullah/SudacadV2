@@ -77,14 +77,18 @@
                         <!-- popup border thickness not dependent on BorderThickness property-->
                         <ScrollViewer Name="DropDownScrollViewer">
                             <Grid RenderOptions.ClearTypeHint="Enabled">
-                                <Canvas Height="0" Width="0" HorizontalAlignment="Left" VerticalAlignment="Top">
-                                    <Rectangle 
-                                        Name="OpaqueRect"
-                                        Height="{Binding ElementName=DropDownBorder,Path=ActualHeight}" 
-                                        Width="{Binding ElementName=DropDownBorder,Path=ActualWidth}" 
-                                        Fill="{Binding ElementName=DropDownBorder,Path=Background}" />
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                
+                                <Canvas Grid.Row="0" Height="0" Width="0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                    <Rectangle Name="OpaqueRect"
+                                               Height="{Binding ElementName=DropDownBorder,Path=ActualHeight}" 
+                                               Width="{Binding ElementName=DropDownBorder,Path=ActualWidth}" 
+                                               Fill="{Binding ElementName=DropDownBorder,Path=Background}" />
                                 </Canvas>
-                                <ItemsPresenter Name="ItemsPresenter" KeyboardNavigation.DirectionalNavigation="Contained" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                                <ItemsPresenter Grid.Row="1" Name="ItemsPresenter" KeyboardNavigation.DirectionalNavigation="Contained" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
                             </Grid>
                         </ScrollViewer>
                     </Border>
@@ -187,7 +191,7 @@
                                                     Name="OpaqueRect"
                                                     Height="{Binding ElementName=DropDownBorder,Path=ActualHeight}" 
                                                     Width="{Binding ElementName=DropDownBorder,Path=ActualWidth}" 
-                                                    Fill="{Binding ElementName=DropDownBorder,Path=Background}" />
+                                                    Fill="{Binding ElementName=DropDownBorder,Path=Background}"/>
                                             </Canvas>
                                             <ItemsPresenter Name="ItemsPresenter" KeyboardNavigation.DirectionalNavigation="Contained" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
                                         </Grid>

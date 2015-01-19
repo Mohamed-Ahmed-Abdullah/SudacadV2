@@ -64,9 +64,9 @@ namespace FirstFloor.ModernUI.App.Pages.Batchs
         public BatchsSearchViewModel()
         {
             Open = new DelegateCommand<Trainee>( trainee =>
-                Navigate("/Pages/BatchView.xaml", new IntegerId { Id = trainee.TraineeId }));
+                Navigate("/Pages/Batchs/BatchView.xaml", new IntegerId { Id = trainee.TraineeId }));
 
-            New = new DelegateCommand(() => Navigate("/Pages/BatchView.xaml"));
+            New = new DelegateCommand(() => Navigate("/Pages/Batchs/BatchView.xaml"));
 
             Search = new DelegateCommand(() =>
             {

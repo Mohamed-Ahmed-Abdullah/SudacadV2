@@ -56,10 +56,10 @@ namespace FirstFloor.ModernUI.App.Pages.Trainees
 
         public TraineesSearchViewModel()
         {
-            OpenTrainee = new DelegateCommand<Trainee>( trainee => 
-                Navigate("/Pages/TraineeView.xaml", new IntegerId {Id = trainee.TraineeId}));
+            OpenTrainee = new DelegateCommand<Trainee>( trainee =>
+                Navigate("/Pages/Trainees/TraineeView.xaml", new IntegerId { Id = trainee.TraineeId }));
 
-            NewTrainee = new DelegateCommand(() => Navigate("/Pages/TraineeView.xaml"));
+            NewTrainee = new DelegateCommand(() => Navigate("/Pages/Trainees/TraineeView.xaml"));
 
             Search = new DelegateCommand(() =>
             {
